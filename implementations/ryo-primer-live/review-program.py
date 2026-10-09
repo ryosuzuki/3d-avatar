@@ -1,0 +1,12 @@
+from pathlib import Path
+from server import provider
+import os,json,base64,subprocess,uuid,urllib.request,hashlib
+R=Path(os.environ['PRIMER_OUT']);paths=[p for p in [R/'ryo-primer-montage.mp4',R/'walkthrough/live-interaction.mp4'] if p.exists()]
+for p in paths:
+ out=p.with_name(p.stem+'-final-audio-review.json')
+ if out.exists():continue
+ wav=Path('/tmp/openclaw')/('primer-program-'+uuid.uuid4().hex+'.wav');subprocess.run(['ffmpeg','-y','-v','error','-i',str(p),'-map','0:a:0','-ar','16000','-ac','1','-c:a','pcm_s16le',str(wav)],check=True)
+ key=__import__('os').environ['OPENAI_API_KEY'];boundary=uuid.uuid4().hex;body=(f'--{boundary}\r\nContent-Disposition: form-data; name="model"\r\n\r\ngpt-4o-mini-transcribe\r\n--{boundary}\r\nContent-Disposition: form-data; name="file"; filename="program.wav"\r\nContent-Type: audio/wav\r\n\r\n'.encode()+wav.read_bytes()+f'\r\n--{boundary}--\r\n'.encode());req=urllib.request.Request('https://api.openai.com/v1/audio/transcriptions',data=body,headers={'Authorization':'Bearer '+key,'Content-Type':'multipart/form-data; boundary='+boundary})
+ with urllib.request.urlopen(req,timeout=120) as res:asr=json.loads(res.read())
+ scope='This is an uncut live interaction: quiet periods while the model prepares a response and during silent slider previews are intentional.' if 'interaction' in p.name else 'This is a Japanese overview montage: brief pauses between six narration segments are intentional.'
+ review=json.loads(provider('chat/completions',{'model':'gpt-audio-1.5','modalities':['text'],'messages':[{'role':'user','content':[{'type':'input_audio','input_audio':{'data':base64.b64encode(wav.read_bytes()).decode(),'format':'wav'}},{'type':'text','text':'Listen to the COMPLETE attached program. '+scope+' Review intelligibility, technical-term pronunciation, clipping or glitches, unnatural cuts and endings. Cite actual audible phrases near the start, middle and end. Return concise JSON with intelligible, clipping, issues (timestamped), phrasesHeard, summary. Do not infer audio quality from a transcript.'}]}],'max_tokens':950}));out.write_text(json.dumps({'media':str(p),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'asr':asr,'perceptualModel':review['model'],'perceptualReview':review['choices'][0]['message']['content'],'humanHeadphoneReview':'Not performed; audio-capable model review used'},ensure_ascii=False,indent=2));wav.unlink();print('complete-program reviewed',p.name,flush=True)

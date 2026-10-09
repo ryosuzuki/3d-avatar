@@ -1,0 +1,165 @@
+{
+  "sourceRepo": "https://github.com/ryosuzuki/avatar-sketch-rendering-study",
+  "sourceCommit": "ff856fc0bbbad8287f7cd8a9ad16433a7a97641c",
+  "snapshotDate": "2026-10-09",
+  "publicSourceOnly": true,
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "29d24f260c4eecddc7a668c947d9588b8d9494bc6abea4c48c12eff2b66830a5",
+      "sourceGitBlob": "3a792d5630093d1e4fd93715cb7d5ee745a4e0ca",
+      "sanitized": true
+    },
+    {
+      "path": "README.md",
+      "sha256": "826d6ab20e011880850f78dd5080c0aed4937236886fc521481e94a8e6e5f409",
+      "sourceGitBlob": "9c28d64fc8a57295aabe791be863bc0ea252a67f",
+      "sanitized": true
+    },
+    {
+      "path": "app.js",
+      "sha256": "dbcbb43168997f2a8d70ecba8fda7daf5874e13c71a8c75aecb6b59d8fb1e170",
+      "sourceGitBlob": "ed2c45cf4779f8025c3b05f8435b85a9de3f6bd5",
+      "sanitized": true
+    },
+    {
+      "path": "avatar.js",
+      "sha256": "133331ffaa70d7894e88800f78fd1fa5c39864e81244bb99ef1abc00c9dc4fc4",
+      "sourceGitBlob": "c13fed31e635187b9a965487efaeeef093a09e1f",
+      "sanitized": true
+    },
+    {
+      "path": "body.js",
+      "sha256": "18d0b3a189de8d86a6f433cc2699a79a7bec9fb0d852099c94a104ef690fb86f",
+      "sourceGitBlob": "0338439400dd91142a826e678b00fd71bd266e5a",
+      "sanitized": true
+    },
+    {
+      "path": "capture.mjs",
+      "sha256": "33868242826794673a80cdedb39c6522453352796531761c732629acb45ae7ae",
+      "sourceGitBlob": "641daf7977d2fdd620e39b49d77aa8a58e9d0aaf",
+      "sanitized": true
+    },
+    {
+      "path": "check-study.py",
+      "sha256": "a734ceddedae4f0362a9d89e8e7f711d505a31da3a61d854d7bdff1940a509a1",
+      "sourceGitBlob": "aef18d57e961d40a34f0e1f1998e076f9e21189b",
+      "sanitized": true
+    },
+    {
+      "path": "index.html",
+      "sha256": "c1a767506c868bef82c892529da94d08dbe58385993e0e18ac36002abd2c59f1",
+      "sourceGitBlob": "41f2e9f308ac8e6477b1925fe232b84b137c575f",
+      "sanitized": true
+    },
+    {
+      "path": "inflate.py",
+      "sha256": "1596a39029d9bcaf57970cd5be64d86600d169490404ed3338085335ea01bc60",
+      "sourceGitBlob": "49f53c9e085f07e65faf0050426fe5f883c80eea",
+      "sanitized": true
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "1598543a434ed72ad88c77b3d39583d026d7c72c91d495051ced8c5725fde1ab",
+      "sourceGitBlob": "5eb11643acc5e6248d5600e87d64c66030d9e11c",
+      "sanitized": true
+    },
+    {
+      "path": "package.json",
+      "sha256": "215909f1a63330f9694b213ca94f3ac1fe01cbd7d2bf5e60bb3ad96a9219ab5f",
+      "sourceGitBlob": "46178ea63c9c67ce7b22f5338d4176cbdc37c56b",
+      "sanitized": true
+    },
+    {
+      "path": "prefix.js",
+      "sha256": "331a0f6d8ea335cae2f6cb918c870fa5f318554c5d745d3df637dd6115130e41",
+      "sourceGitBlob": "10385eaeef6b872ccf5e83e0cc6389bee1fa0c24",
+      "sanitized": true
+    },
+    {
+      "path": "proof.mjs",
+      "sha256": "b9adebb7ad3c025146eb7b854858309d8fa17234a7b29f368f37289d7bc3ce40",
+      "sourceGitBlob": "671eb47067b5b6f7c8e8743693025eee002704e5",
+      "sanitized": true
+    },
+    {
+      "path": "recapture-fallback.mjs",
+      "sha256": "63c0368aef719cd810c9492dd28aece48309feeddfc9275402886fbf0ecba7e5",
+      "sourceGitBlob": "1f95b8f0e3a4493b38252dcd87bf8339b3e05b28",
+      "sanitized": true
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "20a7a0614bcdcb8729ea38b42984acb3a31baf0a3ee724ee1a94adf0dd2538f7",
+      "sourceGitBlob": "4ee73773c2b312052d0d6cb7faed5e75e539003e",
+      "sanitized": true
+    },
+    {
+      "path": "review.mjs",
+      "sha256": "35dce6b0640890d17701af7dfa721707fbc5dc7a5b4d0907f9881afa4e3b6cf4",
+      "sourceGitBlob": "b358098702b83c299fed70014ae55238d1503505",
+      "sanitized": true
+    },
+    {
+      "path": "rig.js",
+      "sha256": "44a42653ac3ce38fa0ca98e4ade009645d51a3959d2ae6e9b3656ebee2b4304e",
+      "sourceGitBlob": "85a2d2e52accbbcfb441c5aa3c5dc9a8946a1b77",
+      "sanitized": true
+    },
+    {
+      "path": "room.js",
+      "sha256": "93e06c4d04bce9e0bf70884737af48566c0266d685af7953f79da0338990536c",
+      "sourceGitBlob": "9c26caf249b958bde69ebb021e6497a3054e6f1a",
+      "sanitized": true
+    },
+    {
+      "path": "server.py",
+      "sha256": "37ee11114ef343539eda98772185056a3736a9def3b3fd58242f0c629150c122",
+      "sourceGitBlob": "484d7e2542496b89e79cebf7894af539e8aae97c",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/OBJLoader.js",
+      "sha256": "d7623bf8959fdbb95302730d5fe1510484b6d16ed975c90f43312ee57546c540",
+      "sourceGitBlob": "c6bc16c12c8414f5dd72e24f8ce9f2e4d39f4841",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/gaussian-splats-3d-license.txt",
+      "sha256": "eaf88512a83fc007481fee3c10b6b6e3dbab64bd6d0d3c64416decf86dbc9440",
+      "sourceGitBlob": "6370ba2d8eab2956c2fd997d7b5d16470c790b99",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/gaussian-splats-3d.module.js",
+      "sha256": "f273394134c9174e49bf42bb4ea0945caaad4fdd63023b8996cc6cd248f52a6b",
+      "sourceGitBlob": "5edf354a654df8c40d6feaac2898040c9043590c",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/three-license.txt",
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "sourceGitBlob": "8ada2a5f982916b0ba4b7a0aa7de347587e745d7",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/utils/BufferGeometryUtils.js",
+      "sha256": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6",
+      "sourceGitBlob": "cc3e4ef8ea6f15c52e7cf132b7292632f6dcad10",
+      "sanitized": true
+    },
+    {
+      "path": "verify.py",
+      "sha256": "475a0d05a898790bb53d6468fee978fcbc753e990fcf48a0bfdce2a27ba66330",
+      "sourceGitBlob": "306064b6623d016610e169751d2a60da40994315",
+      "sanitized": true
+    },
+    {
+      "path": "data/fallback.json",
+      "sha256": "ed702ecb4f356149d7bab5ee6931913afb86bf2e36bbd08739cb09e7227fa45a",
+      "sourceGitBlob": "15a871600a32598d4e0c9f778130638b82f5621f",
+      "sanitized": true
+    }
+  ],
+  "assets": "Not included. Bring your own room/avatar/capture data; see ASSETS.md. Full private restore provenance is preserved separately."
+}

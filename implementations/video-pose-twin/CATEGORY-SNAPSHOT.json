@@ -1,0 +1,135 @@
+{
+  "sourceRepo": "https://github.com/ryosuzuki/video-pose-twin",
+  "sourceCommit": "41c4457aa0b06beec6a768af851821933c127726",
+  "snapshotDate": "2026-10-09",
+  "publicSourceOnly": true,
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "6c7d15d2ab1a0b51ebcae7e88b9ad01f0713d0833bc2dbe8f3bcc7a81b66b344",
+      "sourceGitBlob": "2752eb92e5922f0f1d60494d1793a54775e0d830",
+      "sanitized": true
+    },
+    {
+      "path": "GITHUB-BACKUP.md",
+      "sha256": "f92d3117e676e3a3aa01ac2f457280a82740d7335e80908730a73262ba5b4bc4",
+      "sourceGitBlob": "96f13123f699f37702ddf3a1ab3971c260b8a27f",
+      "sanitized": true
+    },
+    {
+      "path": "README.md",
+      "sha256": "e388d45f9ff184cf59e833204531f2b072b08c47efd7ed34474c9a2025cc52f5",
+      "sourceGitBlob": "eae87d356d73f23240ec8c2260b2df920c17c44f",
+      "sanitized": true
+    },
+    {
+      "path": "app.js",
+      "sha256": "755ad35735b9b163e4d584c2f6be05324747e7cfb708fd1bbedf59cfe3585bb9",
+      "sourceGitBlob": "b1b1f1c4720ad941a86e50c1c869829814c8c182",
+      "sanitized": true
+    },
+    {
+      "path": "check-pose.mjs",
+      "sha256": "8d25a8f58f6bc0036d2bfc125dac4a43d1c5d809ff066b104f042dcdd69cfc7c",
+      "sourceGitBlob": "88fde16e9076c238a6a4c1bc3b9757092c30df94",
+      "sanitized": true
+    },
+    {
+      "path": "index.html",
+      "sha256": "ec78222fc5fb2bbfeb721595cba8f46c41c9b438aa16a3a9d39d1172413cc4c7",
+      "sourceGitBlob": "6f133734c551e4beceefc3b07bf0b86032fb60bb",
+      "sanitized": true
+    },
+    {
+      "path": "infer-video.mjs",
+      "sha256": "6bbf87137b422f4b3183122876757010f3d526d96ef25fbd19b543df47fdfbc9",
+      "sourceGitBlob": "77754818652834ef26609f6eda41b05df440eea0",
+      "sanitized": true
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "a4195c72d5274d3644945ea2a53ad38606f1b7a91b24848bef4ea7c292ae5f8b",
+      "sourceGitBlob": "73663c418ced9692dbac03fdedcc2ccbbcdf199b",
+      "sanitized": true
+    },
+    {
+      "path": "package.json",
+      "sha256": "61baf727a1acc6ba2645f8cda7787f3bfaade800b2937508ace63c3376fca961",
+      "sourceGitBlob": "b48eb79b0650469339bb32e0a80d5cf8e14c1c2b",
+      "sanitized": true
+    },
+    {
+      "path": "pose.js",
+      "sha256": "b85f6b7d31fe145478513b01cc412fc8935cadc17a1b02ea6e6dee58d29214dd",
+      "sourceGitBlob": "6583d375d21bf86b03815f7b4c592a6f69ca4487",
+      "sanitized": true
+    },
+    {
+      "path": "rig.js",
+      "sha256": "27ff17cb3fb9c1673068409125339e57858f74cf1f91968c9e137da57f7e81c0",
+      "sourceGitBlob": "31b49e645c0303090ec03f06b05b4bc7d8c5d76c",
+      "sanitized": true
+    },
+    {
+      "path": "server.mjs",
+      "sha256": "4440c4493fbac5cca389d9604011f46332ac46f54f7b5f70a88e1a8c60a44580",
+      "sourceGitBlob": "4dcbba9a83ca01b21dc6a626d29ee85196c5f39b",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/gaussian-splats-3d-license.txt",
+      "sha256": "eaf88512a83fc007481fee3c10b6b6e3dbab64bd6d0d3c64416decf86dbc9440",
+      "sourceGitBlob": "6370ba2d8eab2956c2fd997d7b5d16470c790b99",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/gaussian-splats-3d.module.js",
+      "sha256": "f273394134c9174e49bf42bb4ea0945caaad4fdd63023b8996cc6cd248f52a6b",
+      "sourceGitBlob": "5edf354a654df8c40d6feaac2898040c9043590c",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/mediapipe/README.md",
+      "sha256": "01bf6c20f4952ab07a5beb24eac549739a10c345d73082403f393a14c23fcb85",
+      "sourceGitBlob": "4af7a1eb3f0b68e47e41c81f9747bba196042871",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/mediapipe/vision_bundle.mjs",
+      "sha256": "3252b10e0fd26c4095e4b6ee545c1c898120b3a3813388ecd4876abe6f1399a9",
+      "sourceGitBlob": "f78131051ca7f75c19b72dc9f97891f70cca8802",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/three-license.txt",
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "sourceGitBlob": "8ada2a5f982916b0ba4b7a0aa7de347587e745d7",
+      "sanitized": true
+    },
+    {
+      "path": "verify-camera.mjs",
+      "sha256": "3c4a2be6906663ef86929df3905d588010479b1366b714b693c2e9037ba9a536",
+      "sourceGitBlob": "4c7b2a23d5b5b578b00a5bed1cea05fe0be813fa",
+      "sanitized": true
+    },
+    {
+      "path": "verify-render.mjs",
+      "sha256": "b03e616c29ab6d12ff14cab24c1807cfa9400d3cb1c1316dc22168b95fbdc4de",
+      "sourceGitBlob": "e282cd0db6add72d74d332900c3ee085354f1261",
+      "sanitized": true
+    },
+    {
+      "path": "verify-video.mjs",
+      "sha256": "f4d900034cd1c6cdb0cc66cd47638a589f4f292db98b48f9a325665d8874365b",
+      "sourceGitBlob": "c6d7222e4c75293a7e46cdb236216ef0a0456d09",
+      "sanitized": true
+    },
+    {
+      "path": "verify-walk.mjs",
+      "sha256": "ece4157ce5c905fa4c6bd30d85532635ece3b62184a9fbe3fc5d7be8e791c7a4",
+      "sourceGitBlob": "415cf6f52e2384f814f8f7e765d79eea12127acf",
+      "sanitized": true
+    }
+  ],
+  "assets": "Not included. Bring your own room/avatar/capture data; see ASSETS.md. Full private restore provenance is preserved separately."
+}

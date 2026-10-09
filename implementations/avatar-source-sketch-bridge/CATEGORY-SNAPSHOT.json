@@ -1,0 +1,177 @@
+{
+  "sourceRepo": "https://github.com/ryosuzuki/avatar-source-sketch-bridge",
+  "sourceCommit": "195eee668d57845973dee1803659d135aa35c4d4",
+  "snapshotDate": "2026-10-09",
+  "publicSourceOnly": true,
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "5de02dbc66c30aef17542289778017ad24063519641762053b750ed7ddb26dc5",
+      "sourceGitBlob": "67cd9ed5b6cb2e3198611f63f59bf907462a8826",
+      "sanitized": true
+    },
+    {
+      "path": "README.md",
+      "sha256": "879fab3dbf87cf72a30f4e3d7b8a7152bd90ad36424170b63aee69ed959e11f8",
+      "sourceGitBlob": "b1a49e28e8d406312a4eefa7c9f6e4be69b21d34",
+      "sanitized": true
+    },
+    {
+      "path": "app.js",
+      "sha256": "bcb00bf0e9602d4825bc679a46a18de5f733ac14f7401235cc7b68033a262e1f",
+      "sourceGitBlob": "598264b48b56a3d65c077f28cab4b0f6378aa0a2",
+      "sanitized": true
+    },
+    {
+      "path": "audio-qa.py",
+      "sha256": "8491fe55471ee720158cab9caab118c88e10fadecb2fe4707e77eec7ae5fe0ab",
+      "sourceGitBlob": "fe3e99348e477e59d52efade1feeec5e12698dd1",
+      "sanitized": true
+    },
+    {
+      "path": "avatar.js",
+      "sha256": "133331ffaa70d7894e88800f78fd1fa5c39864e81244bb99ef1abc00c9dc4fc4",
+      "sourceGitBlob": "c13fed31e635187b9a965487efaeeef093a09e1f",
+      "sanitized": true
+    },
+    {
+      "path": "body.js",
+      "sha256": "6e1d751c8291320a46be50a6036880ff305827f5a0df5d5a443caebcfbfe068f",
+      "sourceGitBlob": "456696241bf8e7b49f461608d18eca355f42cf42",
+      "sanitized": true
+    },
+    {
+      "path": "capture.mjs",
+      "sha256": "56d72d07698e9e8cb8a1e83471d44047c3138bb5688a0230661298de3910a530",
+      "sourceGitBlob": "16d7046155d21e386609163c416a4f171b449519",
+      "sanitized": true
+    },
+    {
+      "path": "index.html",
+      "sha256": "e3085ec28b437b5d29356eb74a695a4ec7f7593605921a447260417bda9dc9cd",
+      "sourceGitBlob": "56eee5d239e637fefa044b0d93a28588835c375e",
+      "sanitized": true
+    },
+    {
+      "path": "inflate.py",
+      "sha256": "1596a39029d9bcaf57970cd5be64d86600d169490404ed3338085335ea01bc60",
+      "sourceGitBlob": "49f53c9e085f07e65faf0050426fe5f883c80eea",
+      "sanitized": true
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "b4bf44de01a917d61c4a2c838b693f7af36672604af2394de8b86990494483d0",
+      "sourceGitBlob": "5d8c5c953cb99128ee0bc008ba48e8e0ba134113",
+      "sanitized": true
+    },
+    {
+      "path": "package.json",
+      "sha256": "f1d0db7186907784f7802b413dd76a5fb45f8d8cdf17bf013071ecee58e2abc4",
+      "sourceGitBlob": "a0a9121d413a7b9815c52820eb75d11dbe7f5f88",
+      "sanitized": true
+    },
+    {
+      "path": "prefix.js",
+      "sha256": "331a0f6d8ea335cae2f6cb918c870fa5f318554c5d745d3df637dd6115130e41",
+      "sourceGitBlob": "10385eaeef6b872ccf5e83e0cc6389bee1fa0c24",
+      "sanitized": true
+    },
+    {
+      "path": "prepare.py",
+      "sha256": "2ef3eb45562680c94e0afa903c034ef71cd2a925f02d4b94cbf1c01de114c709",
+      "sourceGitBlob": "7d08bd8fd5f2f9d2390cf2e6186dcca587e59cf1",
+      "sanitized": true
+    },
+    {
+      "path": "proof.mjs",
+      "sha256": "a679b199dc316d18e08eb7151bd800e5264428b3b1dcdad5bd5637469390c9f9",
+      "sourceGitBlob": "23a75af9fdcfa58afbce46b8144a441f3de38ae2",
+      "sanitized": true
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "20a7a0614bcdcb8729ea38b42984acb3a31baf0a3ee724ee1a94adf0dd2538f7",
+      "sourceGitBlob": "4ee73773c2b312052d0d6cb7faed5e75e539003e",
+      "sanitized": true
+    },
+    {
+      "path": "review.mjs",
+      "sha256": "406ec2a8c6c3bb93f73025fd9020e442b80254c8974f7fc51f02c843fa3ca016",
+      "sourceGitBlob": "3f05b3a98c325d0244dabc4763458f7207065557",
+      "sanitized": true
+    },
+    {
+      "path": "rig.js",
+      "sha256": "44a42653ac3ce38fa0ca98e4ade009645d51a3959d2ae6e9b3656ebee2b4304e",
+      "sourceGitBlob": "85a2d2e52accbbcfb441c5aa3c5dc9a8946a1b77",
+      "sanitized": true
+    },
+    {
+      "path": "room.js",
+      "sha256": "93e06c4d04bce9e0bf70884737af48566c0266d685af7953f79da0338990536c",
+      "sourceGitBlob": "9c26caf249b958bde69ebb021e6497a3054e6f1a",
+      "sanitized": true
+    },
+    {
+      "path": "server.py",
+      "sha256": "b1c7343e8f5dafc8ba759a7d3b10f1b66c8370d9ad0e611696acfd68f97aa533",
+      "sourceGitBlob": "f59a7bf534640b0e439524f12467828cf058ebd3",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/OBJLoader.js",
+      "sha256": "d7623bf8959fdbb95302730d5fe1510484b6d16ed975c90f43312ee57546c540",
+      "sourceGitBlob": "c6bc16c12c8414f5dd72e24f8ce9f2e4d39f4841",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/gaussian-splats-3d-license.txt",
+      "sha256": "eaf88512a83fc007481fee3c10b6b6e3dbab64bd6d0d3c64416decf86dbc9440",
+      "sourceGitBlob": "6370ba2d8eab2956c2fd997d7b5d16470c790b99",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/gaussian-splats-3d.module.js",
+      "sha256": "f273394134c9174e49bf42bb4ea0945caaad4fdd63023b8996cc6cd248f52a6b",
+      "sourceGitBlob": "5edf354a654df8c40d6feaac2898040c9043590c",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/three-license.txt",
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "sourceGitBlob": "8ada2a5f982916b0ba4b7a0aa7de347587e745d7",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/utils/BufferGeometryUtils.js",
+      "sha256": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6",
+      "sourceGitBlob": "cc3e4ef8ea6f15c52e7cf132b7292632f6dcad10",
+      "sanitized": true
+    },
+    {
+      "path": "verify.py",
+      "sha256": "475a0d05a898790bb53d6468fee978fcbc753e990fcf48a0bfdce2a27ba66330",
+      "sourceGitBlob": "306064b6623d016610e169751d2a60da40994315",
+      "sanitized": true
+    },
+    {
+      "path": "voice.py",
+      "sha256": "3e5afeb421466204139ead9bf8528d3d0eae065b16c3c47091760864d4e12731",
+      "sourceGitBlob": "aaf01e75af97e7c6cd0438e3cf360058f9a91d2b",
+      "sanitized": true
+    },
+    {
+      "path": "data/fallback.json",
+      "sha256": "ed702ecb4f356149d7bab5ee6931913afb86bf2e36bbd08739cb09e7227fa45a",
+      "sourceGitBlob": "15a871600a32598d4e0c9f778130638b82f5621f",
+      "sanitized": true
+    },
+    {
+      "path": "narration.json",
+      "sha256": "2bae0fb853acea4d1eae01674955c1810114f6884fe7c9dab5fa23345dc4832a",
+      "sourceGitBlob": "2071f600320c7b014a85c0e89c99b0e0fd9a8f4c",
+      "sanitized": true
+    }
+  ],
+  "assets": "Not included. Bring your own room/avatar/capture data; see ASSETS.md. Full private restore provenance is preserved separately."
+}

@@ -1,0 +1,99 @@
+{
+  "sourceRepo": "https://github.com/ryosuzuki/lhm-body-room-walk",
+  "sourceCommit": "eba77228b512f9d9bd997a22e9f41265ea40af74",
+  "snapshotDate": "2026-10-09",
+  "publicSourceOnly": true,
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "6c7d15d2ab1a0b51ebcae7e88b9ad01f0713d0833bc2dbe8f3bcc7a81b66b344",
+      "sourceGitBlob": "2752eb92e5922f0f1d60494d1793a54775e0d830",
+      "sanitized": true
+    },
+    {
+      "path": "GITHUB-BACKUP.md",
+      "sha256": "f92d3117e676e3a3aa01ac2f457280a82740d7335e80908730a73262ba5b4bc4",
+      "sourceGitBlob": "96f13123f699f37702ddf3a1ab3971c260b8a27f",
+      "sanitized": true
+    },
+    {
+      "path": "README.md",
+      "sha256": "9be641588cf807d5318c3ee591b13dc80d9bff2b424890250c9a5842bb823ee2",
+      "sourceGitBlob": "713ec61b5e226a02ebbd2f8a0f7ee48bd5343ff1",
+      "sanitized": true
+    },
+    {
+      "path": "app.js",
+      "sha256": "da1342b2df7ead0f7963a5a1cb44d29cc73d792666a6719712b9c261516853db",
+      "sourceGitBlob": "0e42813509b47ab99b2ce89b71a816fbd90fc5f7",
+      "sanitized": true
+    },
+    {
+      "path": "index.html",
+      "sha256": "0290f4351a5632fdf14d346d1ba66d01aaaf21ca5bcca2252cb5bb7ab7b04a29",
+      "sourceGitBlob": "68e2ac75e74a812fe8ee2e61a51dd2b078040a58",
+      "sanitized": true
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "1f522c4d9bdf54325010f0485b1a0849dfa49204f4c8ff780ee7df27073da676",
+      "sourceGitBlob": "e691a203538036fcbf6fbcd412b2c8a66d4d2407",
+      "sanitized": true
+    },
+    {
+      "path": "package.json",
+      "sha256": "3c55a5975cb05627d32376e90e827e6b7610f7b1185a1b7e3402ae03043f28b8",
+      "sourceGitBlob": "a071559edd1443196c2914bcd7e493b9f3aefb3d",
+      "sanitized": true
+    },
+    {
+      "path": "pose-api.md",
+      "sha256": "4e5ccd4f4ded31e881e4da9d5c73bfe63fd54d6089a9ca1eedd67678c2e07ad4",
+      "sourceGitBlob": "d3dae09fa4239c2d669ede628003c4479140ae13",
+      "sanitized": true
+    },
+    {
+      "path": "rig.js",
+      "sha256": "27ff17cb3fb9c1673068409125339e57858f74cf1f91968c9e137da57f7e81c0",
+      "sourceGitBlob": "31b49e645c0303090ec03f06b05b4bc7d8c5d76c",
+      "sanitized": true
+    },
+    {
+      "path": "server.mjs",
+      "sha256": "a5b377b05745783dba40d628aa99679126ea92aef252a85a76680b5af609cd91",
+      "sourceGitBlob": "25a590722d9fe8f37ee120514a5ac3058776f2b1",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/gaussian-splats-3d-license.txt",
+      "sha256": "eaf88512a83fc007481fee3c10b6b6e3dbab64bd6d0d3c64416decf86dbc9440",
+      "sourceGitBlob": "6370ba2d8eab2956c2fd997d7b5d16470c790b99",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/gaussian-splats-3d.module.js",
+      "sha256": "f273394134c9174e49bf42bb4ea0945caaad4fdd63023b8996cc6cd248f52a6b",
+      "sourceGitBlob": "5edf354a654df8c40d6feaac2898040c9043590c",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/three-license.txt",
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "sourceGitBlob": "8ada2a5f982916b0ba4b7a0aa7de347587e745d7",
+      "sanitized": true
+    },
+    {
+      "path": "verify-render.mjs",
+      "sha256": "b03e616c29ab6d12ff14cab24c1807cfa9400d3cb1c1316dc22168b95fbdc4de",
+      "sourceGitBlob": "e282cd0db6add72d74d332900c3ee085354f1261",
+      "sanitized": true
+    },
+    {
+      "path": "verify-walk.mjs",
+      "sha256": "ece4157ce5c905fa4c6bd30d85532635ece3b62184a9fbe3fc5d7be8e791c7a4",
+      "sourceGitBlob": "415cf6f52e2384f814f8f7e765d79eea12127acf",
+      "sanitized": true
+    }
+  ],
+  "assets": "Not included. Bring your own room/avatar/capture data; see ASSETS.md. Full private restore provenance is preserved separately."
+}

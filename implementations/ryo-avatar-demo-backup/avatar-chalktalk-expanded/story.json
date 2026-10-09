@@ -1,0 +1,54 @@
+{
+  "duration": 88,
+  "voice": "OpenAI gpt-4o-mini-tts shimmer",
+  "segments": [
+    {
+      "id": "0",
+      "start": 0,
+      "end": 10,
+      "duration": 10,
+      "headline": "A quick sketch",
+      "narration": "A line, a string, and a circle. A few quick pen strokes become a pendulum, right here in the captured room. The drawing itself opens into volume."
+    },
+    {
+      "id": "1",
+      "start": 10,
+      "end": 31,
+      "duration": 21,
+      "headline": "Motion generates the signal",
+      "narration": "Now the pendulum swings, and its angle generates this live waveform. I am not drawing a decorative wave. The moving object is the signal source. Change its amplitude or speed, and the curve changes with it."
+    },
+    {
+      "id": "2",
+      "start": 31,
+      "end": 43,
+      "duration": 12,
+      "headline": "A profile becomes a vase",
+      "narration": "Here is a second example. I sketch a profile beside an axis. Rotating that same curve sweeps out a wireframe vase. The original silhouette is still visible beside the volume."
+    },
+    {
+      "id": "3",
+      "start": 43,
+      "end": 60,
+      "duration": 17,
+      "headline": "Edit the curve, change the volume",
+      "narration": "Watch the waist become wider and narrower. Every meridian is computed from the same profile, so this is a geometric relationship, not a swap between finished models. The runnable version lets you adjust the width yourself."
+    },
+    {
+      "id": "4",
+      "start": 60,
+      "end": 73,
+      "duration": 13,
+      "headline": "Connect a sketch to a transform",
+      "narration": "For the third example, I draw an arrow and a coordinate frame, then connect them. The arrow appears in three dimensions. One rotation value drives both its orientation and this matrix."
+    },
+    {
+      "id": "5",
+      "start": 73,
+      "end": 88,
+      "duration": 15,
+      "headline": "One value, coupled representations",
+      "narration": "As the angle changes, the numbers and the shape stay synchronized. You can scrub that angle in the live project. These are three implemented, Chalktalk-inspired mechanisms, performed by the original Ryo avatar in today\u2019s iPad scan."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "ryo-primer-live",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 server.py",
+    "test": "python3 test-catalog.py && python3 test-server-repair.py",
+    "record": "node record-cases.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.64.0"
+  }
+}

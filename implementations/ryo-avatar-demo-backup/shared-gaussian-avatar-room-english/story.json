@@ -1,0 +1,86 @@
+{
+  "title": "Ryo · English room explainer",
+  "language": "en",
+  "voice": {
+    "provider": "OpenAI",
+    "model": "gpt-4o-mini-tts",
+    "voice": "shimmer",
+    "cloned": false,
+    "playback_tempo": 1.0
+  },
+  "segments": [
+    {
+      "id": "S01",
+      "narration": "This is my original 3D Gaussian avatar, explaining an idea inside the digital twin of my room.",
+      "headline": "Same Ryo. Inside my captured room.",
+      "start": 0.65,
+      "end": 7.2844,
+      "duration": 6.634417,
+      "audio": "S01-clean.wav"
+    },
+    {
+      "id": "S02",
+      "narration": "As I speak, I sketch directly on a transparent board. The drawing lives here in three dimensions.",
+      "headline": "Draw where the explanation happens.",
+      "start": 7.4644,
+      "end": 13.6717,
+      "duration": 6.207333,
+      "audio": "S02-clean.wav"
+    },
+    {
+      "id": "S03",
+      "narration": "Voice, arm movements, and ink share one timeline. That keeps the explanation coordinated.",
+      "headline": "One timeline for voice and motion.",
+      "start": 13.8517,
+      "end": 21.3507,
+      "duration": 7.499,
+      "audio": "S03-clean.wav"
+    },
+    {
+      "id": "S04",
+      "narration": "This moving marker follows the narration. My hand points to the moment being explained.",
+      "headline": "Words, gestures, and ink — in sync.",
+      "start": 21.5307,
+      "end": 28.4568,
+      "duration": 6.926083,
+      "audio": "S04-clean.wav"
+    },
+    {
+      "id": "S05",
+      "narration": "Now the diagram comes off the board. The same idea becomes a set of objects in the room.",
+      "headline": "From the board into the room.",
+      "start": 28.6368,
+      "end": 34.5004,
+      "duration": 5.863583,
+      "audio": "S05-clean.wav"
+    },
+    {
+      "id": "S06",
+      "narration": "Voice gives the meaning. Gesture directs your attention. Space makes the relationship visible.",
+      "headline": "One idea. Three connected channels.",
+      "start": 34.6804,
+      "end": 42.5648,
+      "duration": 7.884417,
+      "audio": "S06-clean.wav"
+    },
+    {
+      "id": "S07",
+      "narration": "This version is a synchronized replay of a saved Jev presentation plan, not a live conversation.",
+      "headline": "Saved Jev plan. A synchronized replay.",
+      "start": 42.7448,
+      "end": 49.5251,
+      "duration": 6.78025,
+      "audio": "S07-clean.wav"
+    },
+    {
+      "id": "S08",
+      "narration": "The goal is simple: an explanation that belongs in your space, not just on a flat screen.",
+      "headline": "An explanation that belongs in your space.",
+      "start": 49.7051,
+      "end": 55.527,
+      "duration": 5.821917,
+      "audio": "S08-clean.wav"
+    }
+  ],
+  "duration": 56.257
+}

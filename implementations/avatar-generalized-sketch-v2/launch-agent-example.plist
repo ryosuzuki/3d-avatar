@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>com.ryosuzuki.avatar-generalized-sketch-v2</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/path/to/local-assets</string>
+		<string>/path/to/local-assets</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/tmp/openclaw/generalized-v2-error.log</string>
+	<key>StandardOutPath</key>
+	<string>/tmp/openclaw/generalized-v2.log</string>
+	<key>WorkingDirectory</key>
+	<string>/path/to/local-assets</string>
+</dict>
+</plist>

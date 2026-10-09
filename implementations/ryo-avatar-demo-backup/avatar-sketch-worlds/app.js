@@ -1,0 +1,121 @@
+import * as THREE from 'three';
+import * as GS from './vendor/gaussian-splats-3d.module.js';
+import {GaussianRig} from './rig.js';
+import {loadCapturedRoom} from './room.js';
+import {installSkinning} from './avatar.js';
+const story=await(await fetch('./story.json')).json(),duration=story.duration;
+const baselineMode=new URLSearchParams(location.search).has('baseline');
+const apiPlan=null;
+if(apiPlan){document.querySelector('#credit').textContent='JEV-PLANNED REPLAY · SYNTHETIC ENGLISH VOICE';document.querySelector('.tag').textContent='JEV × ORIGINAL RYO AVATAR';}
+window.apiPlanEvidence=apiPlan;
+const scene=new THREE.Scene();scene.background=new THREE.Color(0x102333);scene.add(new THREE.HemisphereLight(0xd1f1ff,0x405168,3));
+const light=new THREE.DirectionalLight(0xc8edff,3);light.position.set(0,4,3);scene.add(light);
+const root=document.querySelector('#root');const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setPixelRatio(1);renderer.setSize(root.clientWidth,root.clientHeight);renderer.outputColorSpace=THREE.SRGBColorSpace;root.appendChild(renderer.domElement);
+const camera=new THREE.PerspectiveCamera(38,root.clientWidth/root.clientHeight,.03,100);camera.position.set(1.15,1.85,4.4);camera.lookAt(.22,1.0,.12);
+const viewer=new GS.Viewer({rootElement:root,renderer,camera,threeScene:scene,selfDrivenMode:false,dynamicScene:false,useBuiltInControls:true,enableOptionalEffects:false,gpuAcceleratedSort:false,sharedMemoryForWorkers:true,enableSIMDInSort:true,integerBasedSort:true,halfPrecisionCovariancesOnGPU:false,sphericalHarmonicsDegree:0,sceneRevealMode:GS.SceneRevealMode.Instant,optimizeSplatData:false,ignoreDevicePixelRatio:true});
+const rig=new GaussianRig();window.viewer=viewer;window.ready=false;let controller,time=0,playing=false;
+const clamp=x=>Math.min(1,Math.max(0,x)),smooth=x=>{x=clamp(x);return x*x*(3-2*x)},lerp=(a,b,t)=>a+(b-a)*t;
+// Room floor is supplied by the captured mesh, never a fabricated stage.
+
+
+const shadow=new THREE.Mesh(new THREE.CircleGeometry(.31,48),new THREE.MeshBasicMaterial({color:0x06121c,transparent:true,opacity:.55,depthWrite:false}));shadow.rotation.x=-Math.PI/2;shadow.position.set(-.68,-.007,.035);scene.add(shadow);
+const roomGroup=await loadCapturedRoom(scene);window.roomBackgroundVisible=true;
+
+const BW=1.02,BH=.72,LEFT=.10,BOTTOM=1.08,BZ=.30;
+const boardCanvas=document.createElement('canvas');boardCanvas.width=1400;boardCanvas.height=882;const bc=boardCanvas.getContext('2d');const boardTex=new THREE.CanvasTexture(boardCanvas);
+const board=new THREE.Mesh(new THREE.PlaneGeometry(BW,BH),new THREE.MeshBasicMaterial({map:boardTex,transparent:true,side:THREE.DoubleSide,depthWrite:false}));board.position.set(LEFT+BW/2,BOTTOM+BH/2,BZ);scene.add(board);
+function boardPoint(x,y){return new THREE.Vector3(LEFT+x/1400*BW,BOTTOM+(1-y/882)*BH,BZ+.008)}
+// Original single-line lettering: every visible line is traversed by the pen tip.
+const glyph={A:'0,7 2,0 4,7|1,4 3,4',B:'0,7 0,0 3,0 4,1 4,2 3,3 0,3|3,3 4,4 4,6 3,7 0,7',C:'4,0 1,0 0,1 0,6 1,7 4,7',D:'0,7 0,0 2,0 4,2 4,5 2,7 0,7',E:'4,0 0,0 0,7 4,7|0,3 3,3',F:'0,7 0,0 4,0|0,3 3,3',G:'4,0 1,0 0,1 0,6 1,7 4,7 4,4 2,4',H:'0,0 0,7|4,0 4,7|0,3 4,3',I:'0,0 4,0|2,0 2,7|0,7 4,7',J:'0,6 1,7 3,7 4,6 4,0',K:'0,0 0,7|4,0 0,4 4,7',L:'0,0 0,7 4,7',M:'0,7 0,0 2,3 4,0 4,7',N:'0,7 0,0 4,7 4,0',O:'1,0 3,0 4,1 4,6 3,7 1,7 0,6 0,1 1,0',P:'0,7 0,0 3,0 4,1 4,2 3,3 0,3',Q:'1,0 3,0 4,1 4,6 3,7 1,7 0,6 0,1 1,0|2,5 5,8',R:'0,7 0,0 3,0 4,1 4,2 3,3 0,3|2,3 4,7',S:'4,0 1,0 0,1 0,2 1,3 3,4 4,5 4,6 3,7 0,7',T:'0,0 4,0|2,0 2,7',U:'0,0 0,6 1,7 3,7 4,6 4,0',V:'0,0 2,7 4,0',W:'0,0 1,7 2,4 3,7 4,0',X:'0,0 4,7|4,0 0,7',Y:'0,0 2,3 4,0|2,3 2,7',Z:'0,0 4,0 0,7 4,7','0':'1,0 3,0 4,1 4,6 3,7 1,7 0,6 0,1 1,0','1':'1,1 2,0 2,7|0,7 4,7','2':'0,1 1,0 3,0 4,1 4,2 0,7 4,7','3':'0,0 4,0 2,3 4,4 4,6 3,7 0,7','+':'0,3 4,3|2,1 2,5','=':'0,2 4,2|0,5 4,5','%':'0,7 4,0|0,0 1,0 1,1 0,1 0,0|3,6 4,6 4,7 3,7 3,6','-':'0,3 4,3','/':'0,7 4,0','.':'2,6 2,7'};
+// Persistent drawn paths become live geometric objects, all in the captured room.
+const ink='#ecfff9',gold='#ffc66d',purple='#c7b1ff';
+const ui={amplitude:.48,speed:1.7,waist:1,angle:0,manual:{}};
+window.setParameters=o=>{Object.assign(ui,o);Object.keys(o).forEach(k=>ui.manual[k]=true);return draw(time)};
+const groups=[];let paths;
+function stroke(points,color=ink){paths.push({points,color,length:points.slice(1).reduce((s,v,i)=>s+Math.hypot(v[0]-points[i][0],v[1]-points[i][1]),0)});}
+function arrow(x,y,X,Y,color=ink){stroke([[x,y],[X,Y]],color);const a=Math.atan2(Y-y,X-x);stroke([[X-30*Math.cos(a-.55),Y-30*Math.sin(a-.55)],[X,Y],[X-30*Math.cos(a+.55),Y-30*Math.sin(a+.55)]],color)}
+function circle(x,y,r,color=gold){stroke(Array.from({length:65},(_,i)=>[x+r*Math.cos(i/64*Math.PI*2),y+r*Math.sin(i/64*Math.PI*2)]),color)}
+paths=[];stroke([[180,160],[650,160]]);stroke([[415,160],[415,570]]);circle(415,650,80);groups.push(paths);
+// The body outline is the equator of every subsequent cross-section.
+const fishOutline=Array.from({length:97},(_,j)=>{const a=j/96*Math.PI*2;return [640+335*Math.cos(a),450+140*Math.sin(a)*(1-.22*Math.cos(a))]});
+paths=[];stroke(fishOutline,gold);stroke([[325,450],[205,330],[220,570],[325,450]],gold);circle(850,415,17);stroke([[670,337],[610,257],[525,335]],gold);stroke([[620,570],[540,627],[510,566]],gold);groups.push(paths);
+const ridge=[[185,550],[315,400],[385,455],[505,250],[605,390],[705,310],[820,430],[915,370],[1080,550]];
+const river=Array.from({length:100},(_,j)=>{const u=j/99;return [640+120*Math.sin(u*Math.PI*2.4)*(u*.75+.2),475+u*310]});
+const cloud=Array.from({length:100},(_,j)=>{const a=j/99*Math.PI*2;return [970+95*Math.cos(a),245+38*Math.sin(a)*(1+.22*Math.cos(a*3))]});
+paths=[];stroke(ridge,gold);stroke(river,'#80e6ff');stroke(cloud);groups.push(paths);
+const atoms=[{x:655,y:450,r:105,c:'#ffb48f',label:'O'},{x:350,y:540,r:62,c:'#b4e8ff',label:'H'},{x:990,y:540,r:62,c:'#b4e8ff',label:'H'}];
+paths=[];atoms.forEach(a=>stroke(Array.from({length:65},(_,j)=>{const ph=j/64*Math.PI*2;return [a.x+a.r*Math.cos(ph),a.y+a.r*.8925*Math.sin(ph)]}),a.c));groups.push(paths);
+let penState={x:180,y:160,lift:0};
+// Camera-facing ribbons retain visible pen width under orbit; actual spatial points are unchanged.
+function ribbon(color,width=.0065){const g=new THREE.BufferGeometry(),b=new Float32Array(4096*18);g.setAttribute('position',new THREE.BufferAttribute(b,3));g.setDrawRange(0,0);const o=new THREE.Mesh(g,new THREE.MeshBasicMaterial({color,side:THREE.DoubleSide,depthTest:false,depthWrite:false}));o.renderOrder=55;o.userData.width=width;scene.add(o);return o}
+function setLine(o,pts){const ar=o.geometry.attributes.position.array;let n=0;const view=camera.position.clone().sub(camera.getWorldDirection(new THREE.Vector3())).normalize();for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i],d=b.clone().sub(a),normal=new THREE.Vector3().crossVectors(d,view).normalize().multiplyScalar(o.userData.width/2);if(normal.lengthSq()<1e-10)normal.set(o.userData.width/2,0,0);const q=[a.clone().add(normal),a.clone().sub(normal),b.clone().add(normal),b.clone().add(normal),a.clone().sub(normal),b.clone().sub(normal)];for(const v of q){ar[n++]=v.x;ar[n++]=v.y;ar[n++]=v.z}}o.geometry.attributes.position.needsUpdate=true;o.geometry.setDrawRange(0,n/3);o.geometry.computeBoundingSphere()}
+const strokes=groups.map(ps=>ps.map(s=>ribbon(s.color)));const rings=Array.from({length:52},(_,i)=>ribbon(i>=38?'#b4e8ff':gold,.0041));const trace=ribbon(purple,.0055),graph=ribbon('#adc8ca',.003),connection=ribbon(purple,.004),model=ribbon(gold,.0065);const flow=Array.from({length:17},()=>ribbon('#efffff',.006));
+function text(s,x,y,size=46,color=ink){bc.fillStyle=color;bc.font=`italic ${size}px Chalkboard, 'Comic Sans MS', cursive`;bc.fillText(s,x,y)}
+const section=t=>t<28?0:t<62?1:t<98?2:3;
+function drawn(ps,progress,trans,objects){let rem=clamp(progress)*ps.reduce((s,p)=>s+p.length,0),last=ps[0].points[0];ps.forEach((s,k)=>{let r=Math.max(0,Math.min(s.length,rem));rem-=s.length;const pts=[trans(...s.points[0],k)];if(r>0){last=s.points[0];window.lastPathIndex=k;}for(let j=1;j<s.points.length;j++){const a=s.points[j-1],b=s.points[j],d=Math.hypot(b[0]-a[0],b[1]-a[1]);if(r>=d){pts.push(trans(...b,k));last=b;r-=d}else{if(r>0){last=[lerp(a[0],b[0],r/d),lerp(a[1],b[1],r/d)];pts.push(trans(...last,k))}break}}objects[k].visible=pts.length>1;setLine(objects[k],pts)});return last}
+function drawBoard(i,p,t){bc.clearRect(0,0,1400,882);const s=section(t),local=t-[0,28,62,98][s];strokes.forEach((os,j)=>os.forEach(o=>o.visible=j===s));rings.forEach(o=>{o.visible=false;o.material.color.set(gold)});flow.forEach(o=>o.visible=false);trace.visible=graph.visible=connection.visible=model.visible=false;
+ let trans=(x,y)=>boardPoint(x,y),last;
+ if(s===0){const lift=smooth((local-4)/3),sw=local>8?ui.amplitude*Math.sin((local-8)*ui.speed):0;const pivot=boardPoint(415,160);pivot.z+=lift*.25;trans=(x,y,z=0)=>{const v=boardPoint(x,y);v.z+=lift*.25;v.sub(pivot);if(y>160)v.applyAxisAngle(new THREE.Vector3(0,0,1),sw);return v.add(pivot).add(new THREE.Vector3(0,0,z*lift))};last=drawn(groups[s],local/3.6,(x,y)=>trans(x,y),strokes[s]);
+  for(let k=0;k<5;k++){rings[k].visible=local>4;const pts=[];for(let j=0;j<=64;j++){const a=j/64*Math.PI*2,ph=(k+1)*Math.PI/6;pts.push(trans(415+80*Math.cos(a),650+80*Math.sin(a)*Math.cos(ph*lift),80/1400*BW*Math.sin(a)*Math.sin(ph*lift)))}setLine(rings[k],pts)}
+  text('pendulum',130,95,57);if(local>8){text('motion → signal',810,290,49,purple);graph.visible=trace.visible=connection.visible=true;setLine(graph,[[830,390],[830,740],[1310,740]].map(p=>boardPoint(...p)));setLine(connection,[[615,475],[755,475],[735,462],[755,475],[735,490]].map(p=>boardPoint(...p)));const hist=Math.min(10,local-8),pts=[];for(let j=0;j<=180;j++){const age=hist*(1-j/180),angle=ui.amplitude*Math.sin((local-8-age)*ui.speed);pts.push(boardPoint(850+j/180*440,565-angle*245))}setLine(trace,pts);text(`${(sw*180/Math.PI).toFixed(0)}°`,1140,800,58,purple);}
+  window.morphEvidence={example:'pendulum',angle:sw,waveCurrent:sw,amplitude:ui.amplitude,frequency:ui.speed,source:'same live angle evaluated for bob and waveform'};
+  window.penTarget=local<3.6?trans(...last):local<8?boardPoint(510,650):boardPoint(610,510);
+ }else if(s===1){const inflate=smooth((local-4.2)/4),swim=smooth((local-11)/3),age=Math.max(0,local-11),yaw=swim*(.32*Math.sin(age*.42)+.42),center=boardPoint(640,450);
+  function fish(x,y,z=0){const v=boardPoint(x,y).sub(center),tail=clamp((650-x)/445);v.z+=z*inflate*ui.waist;v.z+=swim*.045*tail*tail*Math.sin(age*3.6+(x-640)/170);v.applyAxisAngle(new THREE.Vector3(0,1,0),yaw);v.x+=swim*.075*Math.sin(age*.44);v.y+=swim*.03*Math.sin(age*.8);return v.add(center)}
+  trans=(x,y)=>fish(x,y);last=drawn(groups[s],local/4.2,trans,strokes[s]);
+  // Meridians start as the SAME flat outline, then open continuously around the long axis.
+  for(let k=0;k<9;k++){const ph=(k+1)/10*Math.PI*inflate,pts=fishOutline.map(([x,y])=>fish(x,450+(y-450)*Math.cos(ph),(y-450)/882*BH*Math.sin(ph)));rings[k].visible=local>4.2;setLine(rings[k],pts)}
+  for(let k=0;k<11;k++){const x=640+300*Math.cos((k+1)/12*Math.PI),rad=140*Math.sqrt(Math.max(0,1-Math.pow((x-640)/335,2)))*(1-.22*(x-640)/335);const pts=Array.from({length:65},(_,j)=>{const ph=j/64*Math.PI*2*inflate;return fish(x,450+rad*Math.cos(ph),rad/882*BH*Math.sin(ph))});rings[9+k].visible=local>4.2;setLine(rings[9+k],pts)}
+  text('fish',590,130,64,gold);text(local<9?'outline → volume':'same strokes, now swimming',490,800,49,gold);
+  window.penTarget=local<4.2?trans(...last):fish(350,450);window.morphEvidence={example:'fish',inflate,swim,yaw,tailPhase:age*3.6,source:'original fish equator and fin strokes persist; cross-sections derive from original silhouette',sameStroke:strokes[1][0].uuid,depth:inflate*.11*ui.waist};
+ }else if(s===2){const depth=smooth((local-6)/5),age=Math.max(0,local-11);const base=boardPoint(650,620);
+  function terrain(x,y,q=0){const v=boardPoint(x,y);v.z+=q*.43*depth;v.y-=q*.12*depth;return v}
+  function ridgeY(x){for(let k=1;k<ridge.length;k++){if(x<=ridge[k][0])return lerp(ridge[k-1][1],ridge[k][1],(x-ridge[k-1][0])/(ridge[k][0]-ridge[k-1][0]))}return ridge.at(-1)[1]}
+  function riverAt(u){const j=clamp(u)*(river.length-1),a=river[Math.floor(j)],b=river[Math.min(river.length-1,Math.floor(j)+1)],x=lerp(a[0],b[0],j%1),oldY=lerp(a[1],b[1],j%1),surfaceY=lerp(ridgeY(x),650+u*80,u*.7),v=boardPoint(x,lerp(oldY,surfaceY,depth));v.z+=depth*u*.43;v.y-=depth*u*.12;v.y+=depth*.002;return v}
+  trans=(x,y,k)=>k===1?riverAt(clamp((y-475)/310)):k===2?terrain(x+depth*age*1.7,y,-.2):terrain(x,y);
+  last=drawn(groups[s],local/6,trans,strokes[s]);
+  // Each terrain row is a continuous extrusion of the exact ridge polyline.
+  for(let k=0;k<12;k++){const q=(k+1)/12,pts=ridge.map(([x,y])=>terrain(x,lerp(y,650+q*80,q*.7*depth),q));rings[k].visible=local>6;setLine(rings[k],pts)}
+  for(let k=0;k<ridge.length;k++){const [x,y]=ridge[k],pts=Array.from({length:14},(_,j)=>{const q=j/13;return terrain(x,lerp(y,650+q*80,q*.7*depth),q)});rings[12+k].visible=local>6;setLine(rings[12+k],pts)}
+  for(let k=0;k<5;k++){const ph=(k+1)/6*Math.PI*depth,pts=cloud.map(([x,y])=>{const v=terrain(x+depth*age*1.7,245+(y-245)*Math.cos(ph),-.2);v.z+=(y-245)/882*BH*Math.sin(ph)*depth;return v});rings[21+k].visible=local>6;rings[21+k].material.color.set(ink);setLine(rings[21+k],pts)}
+  if(local>11)for(let k=0;k<flow.length;k++){const u=(age*.10+k/flow.length)%1;flow[k].visible=true;setLine(flow[k],Array.from({length:5},(_,j)=>riverAt(Math.min(1,u+j*.006))))}
+  text('landscape',470,115,61,gold);text('ridge → depth',120,870,44,gold);text('river → flow',890,870,44,'#80e6ff');window.penTarget=local<6?trans(...last,window.lastPathIndex):riverAt(.7);window.morphEvidence={example:'terrain',depth,flowPhase:age*.1,source:'ridge polyline extruded continuously; original river samples drive channel and current',ridge:ridge.map(v=>v.slice()),riverSourceCount:river.length};
+ }else{const inflate=smooth((local-4)/4),bind=smooth((local-9)/4),age=Math.max(0,local-14),theta=ui.manual.angle?ui.angle:.35*Math.sin(age*.4);const c=boardPoint(655,450),bondLen=.23,half=104.5/2*Math.PI/180;const centers=atoms.map((a,k)=>{const old=boardPoint(a.x,a.y),target=k===0?c:c.clone().add(new THREE.Vector3((k===1?-1:1)*Math.sin(half)*bondLen,-Math.cos(half)*bondLen,0));return old.lerp(target,bind)});
+  const spatial=(v)=>v.sub(c).applyAxisAngle(new THREE.Vector3(0,1,0),theta*bind).add(c);
+  trans=(x,y,k)=>{const a=atoms[k],v=boardPoint(x,y).sub(boardPoint(a.x,a.y)).add(centers[k]);return spatial(v)};last=drawn(groups[s],local/4,trans,strokes[s]);
+  for(let a=0;a<3;a++)for(let k=0;k<10;k++){const atom=atoms[a],ph=(k+1)/11*Math.PI*inflate,pts=Array.from({length:65},(_,j)=>{const ang=j/64*Math.PI*2,v=boardPoint(atom.x+atom.r*Math.cos(ang),atom.y+atom.r*.8925*Math.sin(ang)*Math.cos(ph)).sub(boardPoint(atom.x,atom.y));v.z+=atom.r/1400*BW*Math.sin(ang)*Math.sin(ph)*inflate;return spatial(v.add(centers[a]))});const o=rings[a*10+k];o.visible=local>4;o.material.color.set(atom.c);setLine(o,pts)}
+  if(local>9){connection.visible=model.visible=true;setLine(connection,[spatial(centers[0].clone()),spatial(centers[1].clone())]);setLine(model,[spatial(centers[0].clone()),spatial(centers[2].clone())]);}
+  window.atomLabelPositions=centers.map(v=>spatial(v.clone()).toArray());text('H₂O',620,130,70);if(local>13){text('104.5°',570,735,50,gold);text('schematic — not atom scale',400,835,42)}window.penTarget=local<4?trans(...last,window.lastPathIndex):spatial(centers[1].clone());window.morphEvidence={example:'water',inflate,bind,angleDegrees:104.5,rotation:theta,centers:centers.map(v=>v.toArray()),source:'same O/H circles open into spheres and centers bind; simplified bent molecular model, not literal radii'};
+ }
+ penState={x:last[0],y:last[1],lift:local<([3.6,4.2,6,4][s])?0:.045};boardTex.needsUpdate=true;
+}
+
+const pen=new THREE.Group();const shaft=new THREE.Mesh(new THREE.CylinderGeometry(.008,.008,.16,12),new THREE.MeshStandardMaterial({color:0xffc15b,metalness:.5,roughness:.3}));shaft.position.y=.095;pen.add(shaft);const tip=new THREE.Mesh(new THREE.ConeGeometry(.008,.03,12),new THREE.MeshStandardMaterial({color:0xffffff}));tip.rotation.z=Math.PI;tip.position.y=.015;pen.add(tip);scene.add(pen);
+const headPlanes=[];for(let j=0;j<3;j++){const c=document.createElement('canvas');c.width=330;c.height=270;const tx=new THREE.CanvasTexture(c);const g=new THREE.Mesh(new THREE.PlaneGeometry(330/1400*BW,270/882*BH),new THREE.MeshBasicMaterial({map:tx,transparent:true,side:THREE.DoubleSide,depthWrite:false}));g.userData={canvas:c,tex:tx};scene.add(g);headPlanes.push(g)}
+function currentSegment(t){let i=0;for(let j=0;j<story.segments.length;j++)if(t>=story.segments[j].start)i=j;return i}
+function phaseProgress(i,t){const s=story.segments[i];return clamp((t-s.start)/s.duration)}
+let cameraTourEnabled=true;viewer.controls.addEventListener('start',()=>{cameraTourEnabled=false});
+function draw(t){time=Math.max(0,Math.min(duration,t));const i=currentSegment(time),p=phaseProgress(i,time);if(cameraTourEnabled){camera.position.set(.48+smooth((time-5)/8)*.12+(time>73&&time<98?.48*Math.sin((time-73)/25*Math.PI):0),1.75+(time>73&&time<98?.13*Math.sin((time-73)/25*Math.PI):0),3.15);const at=new THREE.Vector3(.43,1.05,.14);camera.lookAt(at);viewer.controls.target.copy(at);camera.updateMatrixWorld()}
+ drawBoard(i,p,time);
+ const desired=window.penTarget.clone(),rootPos=[time>=28?.16:-.12,0,time>=28?.05:-.05];shadow.position.x=rootPos[0];const wrist=desired.clone().add(new THREE.Vector3(-.02,-.055,-.10-penState.lift));const local=wrist.clone().sub(new THREE.Vector3(...rootPos));
+ rig.update({position:rootPos,yaw:0,gait:0,walking:false,grip:true,reach:0,center:[0,1.1,.3],handTargets:[[-.205,.94,.09],local.toArray()],handDirections:[[0,-.11,.02],[.02,.055,.10]],headYaw:.17});
+ pen.position.copy(desired);pen.position.z-=penState.lift;pen.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),new THREE.Vector3(-.02,-.055,-.1).normalize());
+ headPlanes.forEach((g,j)=>{g.visible=time>=98&&time<128;g.scale.setScalar(.29);if(g.visible){g.position.fromArray(window.atomLabelPositions[j]);g.position.z+=.10;const canvas=g.userData.canvas,c=canvas.getContext('2d');c.clearRect(0,0,330,270);c.font='200px Chalkboard, cursive';c.textAlign='center';c.textBaseline='middle';c.fillStyle=atoms[j].c;c.fillText(atoms[j].label,165,135);g.userData.tex.needsUpdate=true;g.material.depthTest=false;g.renderOrder=60;}});
+ const hand=rig.segments[8][1];
+ viewer.update();window.debugMode=2;controller.sort(camera);viewer.render();renderer.autoClear=false;renderer.clearDepth();scene.background=null;window.debugMode=1;controller.sort(camera);viewer.render();window.debugMode=0;renderer.autoClear=true;scene.background=new THREE.Color(0x102333);const bg=scene.background;scene.background=null;renderer.autoClear=false;renderer.render(scene,camera);renderer.autoClear=true;scene.background=bg;
+ document.querySelector('#chaptertext').textContent=String(i+1).padStart(2,'0')+' / '+story.segments[i].headline;document.querySelector('#headline').textContent=story.segments[i].headline;
+ // Short sentence-level captions share each measured speech segment.
+ const sentences=story.segments[i].narration.match(/[^.!?]+[.!?]+/g)||[story.segments[i].narration];const total=sentences.reduce((n,s)=>n+s.length,0);let cursor=0,cap=sentences.at(-1);for(const s of sentences){cursor+=s.length/total;if(p<=cursor){cap=s.trim();break}}
+ document.querySelector('#caption').textContent=time>=story.segments[i].start&&time<=story.segments[i].end?cap:'';document.querySelector('#progress i').style.width=(time/duration*100)+'%';document.querySelector('#marker').textContent=time.toFixed(1)+' / '+duration.toFixed(1)+' s';document.querySelector('#timeline').value=time;
+ window.state={time,segment:story.segments[i].id,pointing:true,penTip:pen.position.toArray(),contactError:pen.position.distanceTo(desired),penLift:penState.lift,desiredPoint:desired.toArray(),leftHand:hand.toArray(),armErrors:rig.armErrors.slice(),root:rootPos,diagram:story.segments[i].headline,illustrative:true};return window.state;
+}
+window.drawFrame=t=>{playing=false;return draw(t)};window.seek=t=>{playing=false;document.querySelector('#voice').pause();document.querySelector('#voice').currentTime=t;return draw(t)};window.getEvidence=()=>({asset:window.assetEvidence,state:window.state,voice:story.voice,apiPlan,duration,renderer:renderer.getContext().getParameter(renderer.getContext().VERSION),roomVisible:roomGroup.visible,room:window.roomEvidence,camera:camera.position.toArray()});
+window.setCamera=(pos,target)=>{cameraTourEnabled=false;camera.position.fromArray(pos);viewer.controls.target.fromArray(target);camera.lookAt(new THREE.Vector3().fromArray(target));draw(time)};
+let questionEnd=null;const conversation=[];const voice=document.querySelector('#voice');document.querySelector('#timeline').max=duration;document.querySelector('#play').onclick=async()=>{if(playing){voice.pause();playing=false;}else{if(time>=duration-.1){voice.currentTime=0;time=0;}await voice.play();playing=true;}document.querySelector('#play').textContent=playing?'Pause':'Play'};document.querySelector('#restart').onclick=async()=>{voice.currentTime=0;await voice.play();playing=true;document.querySelector('#play').textContent='Pause'};document.querySelector('#timeline').oninput=e=>window.seek(+e.target.value);document.querySelector('#room').onclick=e=>{roomGroup.visible=!roomGroup.visible;window.roomBackgroundVisible=roomGroup.visible;e.target.classList.toggle('on',roomGroup.visible);draw(time)};voice.onended=()=>{playing=false;draw(duration);document.querySelector('#play').textContent='Replay'};
+function tick(){requestAnimationFrame(tick);if(!window.ready)return;if(playing){draw(voice.currentTime);if(questionEnd!==null&&voice.currentTime>=questionEnd){voice.pause();playing=false;questionEnd=null;document.querySelector('#play').textContent='Play'}}}requestAnimationFrame(tick);window.addEventListener('resize',()=>{renderer.setSize(root.clientWidth,root.clientHeight);camera.aspect=root.clientWidth/root.clientHeight;camera.updateProjectionMatrix();if(window.ready)draw(time)});if(new URLSearchParams(location.search).has('film'))document.body.classList.add('film');
+try{
+ await viewer.addSplatScenes([{path:'./assets/ryo_tpose.ply',splatAlphaRemovalThreshold:1},{path:'./assets/ipad-room.ply',splatAlphaRemovalThreshold:1}],{showLoadingUI:false,optimizeSplatData:false});viewer.controls.target.set(.22,1.0,.12);viewer.controls.enableDamping=false;controller=installSkinning(viewer,rig);window.assetEvidence.room='Today iPad Scaniverse Gaussian splat room';window.assetEvidence.task='Four living sketches: pendulum, swimming fish, extruded landscape and schematic H2O; original Ryo Gaussian avatar and today iPad room';window.ready=true;document.querySelector('#loading').remove();draw(0);
+}catch(e){window.loadError=e.stack;document.querySelector('#error').textContent=e.message;console.error(e)}
+
+for(const id of ['amplitude','speed','waist','angle'])document.querySelector('#'+id).oninput=e=>window.setParameters({[id]:+e.target.value});
+window.getGeometryEvidence=()=>({example:window.morphEvidence?.example,strokes:strokes.map(os=>os.map(o=>({uuid:o.uuid,count:o.geometry.drawRange.count,vertices:Array.from(o.geometry.attributes.position.array.slice(0,30))}))),volume:rings.filter(o=>o.visible).map(o=>({count:o.geometry.drawRange.count,vertices:Array.from(o.geometry.attributes.position.array.slice(0,30))}))});

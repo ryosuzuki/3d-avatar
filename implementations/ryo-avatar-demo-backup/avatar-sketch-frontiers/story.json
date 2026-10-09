@@ -1,0 +1,70 @@
+{
+  "duration": 144,
+  "voice": "OpenAI gpt-4o-mini-tts shimmer",
+  "segments": [
+    {
+      "id": "0",
+      "start": 0,
+      "end": 18,
+      "duration": 18,
+      "headline": "A dinosaur from one quick sketch",
+      "narration": "One quick outline: tail, body, neck, and head. I draw the legs below it. The same contour opens into a wireframe body, then settles onto the floor. Nothing swaps in a finished model."
+    },
+    {
+      "id": "1",
+      "start": 18,
+      "end": 36,
+      "duration": 18,
+      "headline": "The drawing walks through the room",
+      "narration": "Now the sketch walks. Its feet alternate and the tail balances the motion. I stay beside it while the camera changes our view. This is an authored walking creature, not a fossil reconstruction. The walking speed can be changed in the demo."
+    },
+    {
+      "id": "2",
+      "start": 36,
+      "end": 54,
+      "duration": 18,
+      "headline": "Attention opens into space",
+      "narration": "I sketch three tokens, then three attention heads. The boxes unfold into separate planes in space. Lines connect a selected token to the others. Each head can show a different pattern, rather than hiding every relationship on one flat diagram."
+    },
+    {
+      "id": "3",
+      "start": 54,
+      "end": 72,
+      "duration": 18,
+      "headline": "One selection, several views",
+      "narration": "Change the selected token and every head updates. The line thickness represents normalized example weights. These weights are illustrative, not measured from a language model. A small matrix shows the same numbers. Vectors and attention can be explored as connected spatial representations."
+    },
+    {
+      "id": "4",
+      "start": 72,
+      "end": 90,
+      "duration": 18,
+      "headline": "A cylinder full of moving particles",
+      "narration": "Next I draw a cylinder. Its circles unfold into rings and its sides gain depth. Small particles move inside. This is a schematic ideal gas model. The piston changes the space available while the camera reveals the volume."
+    },
+    {
+      "id": "5",
+      "start": 90,
+      "end": 108,
+      "duration": 18,
+      "headline": "Compression and temperature",
+      "narration": "At fixed temperature, reducing volume increases pressure. Raise the temperature and particles move faster. Our displayed pressure follows particle count times temperature divided by volume. This does not mean every compression must raise temperature; the process and heat exchange matter."
+    },
+    {
+      "id": "6",
+      "start": 108,
+      "end": 126,
+      "duration": 18,
+      "headline": "A human outline gains depth",
+      "narration": "Finally a simple human outline. The same silhouette gains cross sections and opens into a wireframe body. I point to two schematic lung shapes and a small heart. These are explanatory symbols, not an anatomical reconstruction or medical visualization."
+    },
+    {
+      "id": "7",
+      "start": 126,
+      "end": 144,
+      "duration": 18,
+      "headline": "A sketch becomes a spatial explanation",
+      "narration": "Turn the view and the drawn body has depth. The lungs gently expand as a breathing illustration. The camera, the pen, and the original avatar remain in the same scanned room. Four more examples extend the living sketch collection, without replacing the presenter."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "duration": 128,
+  "voice": "OpenAI gpt-4o-mini-tts shimmer",
+  "segments": [
+    {
+      "id": "0",
+      "start": 0,
+      "end": 12,
+      "duration": 12,
+      "headline": "One stroke, one living idea",
+      "narration": "A quick line, a string, and a circle. I draw a pendulum here in the room. Watch the same circle open into a wireframe volume. No new model replaces it."
+    },
+    {
+      "id": "1",
+      "start": 12,
+      "end": 28,
+      "duration": 16,
+      "headline": "Motion makes the waveform",
+      "narration": "Now the pendulum moves, and its angle generates the waveform. One changing value drives both the swing and the signal. The curve is computed from motion, not sketched by hand. In the live version, amplitude and frequency are adjustable."
+    },
+    {
+      "id": "2",
+      "start": 28,
+      "end": 43,
+      "duration": 15,
+      "headline": "A fish drawn in the air",
+      "narration": "Next, a fish. One flowing outline, a tail, and a small eye. The outline stays in place as its cross sections unfold. A flat sketch becomes a three dimensional wireframe. The fins and the eye stay attached."
+    },
+    {
+      "id": "3",
+      "start": 43,
+      "end": 62,
+      "duration": 19,
+      "headline": "The sketch learns to swim",
+      "narration": "The same geometry now swims through the room. Its tail bends from side to side, and a wave travels along the body. I reach toward it as it turns. These are animated vertices, not a replacement model. It remains a drawing, even in motion."
+    },
+    {
+      "id": "4",
+      "start": 62,
+      "end": 78,
+      "duration": 16,
+      "headline": "A landscape grows from lines",
+      "narration": "Now I draw a mountain ridge, a winding river, and clouds. The ridge lifts into depth. Repeated curves grow into a terrain grid, while the original river stroke becomes a channel through the valley. The source lines remain visible."
+    },
+    {
+      "id": "5",
+      "start": 78,
+      "end": 98,
+      "duration": 20,
+      "headline": "Depth, flow, and a new viewpoint",
+      "narration": "The current travels along that same river path. Clouds gain volume and drift above the peaks. A gentle camera orbit reveals the depth without losing the drawing, the avatar, or the captured room. This is a small procedural landscape built from my drawn lines, not a reconstruction of an actual mountain."
+    },
+    {
+      "id": "6",
+      "start": 98,
+      "end": 113,
+      "duration": 15,
+      "headline": "Circles become a molecule",
+      "narration": "Finally, three circles: one oxygen and two hydrogens. Each circle opens into a wireframe sphere. The spheres move together and form two bonds, creating a simplified water molecule. The original contours are preserved."
+    },
+    {
+      "id": "7",
+      "start": 113,
+      "end": 128,
+      "duration": 15,
+      "headline": "Sketches become living worlds",
+      "narration": "The bent shape represents water, with an angle of about one hundred four and a half degrees. Sizes and bonds are schematic, not literal atom scale. Four authored transformations, one original avatar, and today\u2019s iPad room. A sketch becomes a living explanation."
+    }
+  ]
+}

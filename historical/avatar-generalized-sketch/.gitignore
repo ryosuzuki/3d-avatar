@@ -1,0 +1,8 @@
+node_modules/
+__pycache__/
+assets/*.ply
+generated/*.mp3
+*.mp4
+assets/*.glb
+assets/*.mp3
+assets/*.obj

@@ -1,0 +1,85 @@
+{
+  "title": "A Transformer, in my room",
+  "voice": {
+    "provider": "OpenAI",
+    "model": "gpt-4o-mini-tts",
+    "voice": "shimmer",
+    "cloned": false,
+    "playback_tempo": 1.13
+  },
+  "segments": [
+    {
+      "id": "S01",
+      "headline": "TOKENS",
+      "narration": "How does a decoder-only Transformer generate text? Start with: the cat sat. Tokenization turns text into discrete pieces. These word-sized tokens are only an illustration.",
+      "start": 0.5752212389380532,
+      "end": 10.38982300884956,
+      "duration": 9.814638938053097,
+      "audio": "S01-clean.wav"
+    },
+    {
+      "id": "S02",
+      "headline": "EMBEDDING + POSITION",
+      "narration": "Each token becomes an embedding vector. Position information lets the model distinguish order. Now the sequence is a set of numerical representations, ready to exchange information.",
+      "start": 10.54911504424779,
+      "end": 20.763716814159295,
+      "duration": 10.214528318584073,
+      "audio": "S02-clean.wav"
+    },
+    {
+      "id": "S03",
+      "headline": "CAUSAL ATTENTION",
+      "narration": "In attention, each position produces a query, a key, and a value. Scaled query-key scores are masked: a position cannot access future tokens. Softmax converts allowed scores into weights.",
+      "start": 20.923008849557526,
+      "end": 32.23053097345133,
+      "duration": 11.3075592920354,
+      "audio": "S03-clean.wav"
+    },
+    {
+      "id": "S04",
+      "headline": "MIX THE VALUES",
+      "narration": "For the last position, these illustrative weights mix the value vectors into a contextual representation. The arrows show information flow, not an explanation of the model\u2019s reasoning.",
+      "start": 32.38982300884956,
+      "end": 43.85734513274336,
+      "duration": 11.467515044247788,
+      "audio": "S04-clean.wav"
+    },
+    {
+      "id": "S05",
+      "headline": "MULTIPLE HEADS",
+      "narration": "Multiple attention heads perform different learned projections in parallel. Their outputs are concatenated and projected back into one representation. Different heads can capture different relationships.",
+      "start": 44.01663716814159,
+      "end": 54.355575221238944,
+      "duration": 10.338938053097346,
+      "audio": "S05-clean.wav"
+    },
+    {
+      "id": "S06",
+      "headline": "STACK THE BLOCKS",
+      "narration": "Residual connections, normalization, and a token-wise feed-forward network complete a block. Stack many blocks to refine the representations. Exact normalization order varies across architectures.",
+      "start": 54.514867256637174,
+      "end": 65.77796460176991,
+      "duration": 11.263126548672567,
+      "audio": "S06-clean.wav"
+    },
+    {
+      "id": "S07",
+      "headline": "NEXT-TOKEN DISTRIBUTION",
+      "narration": "At the final position, an output projection and softmax produce next-token probabilities. These example numbers are invented for illustration. A decoding rule selects the next token: on.",
+      "start": 65.93725663716815,
+      "end": 76.27619469026548,
+      "duration": 10.338938053097346,
+      "audio": "S07-clean.wav"
+    },
+    {
+      "id": "S08",
+      "headline": "REPEAT",
+      "narration": "Append on to the context, then predict again. One token at a time, the sequence grows. That is autoregressive generation: the same Transformer, repeatedly applied.",
+      "start": 76.43548672566372,
+      "end": 86.05469026548673,
+      "duration": 9.619137168141593,
+      "audio": "S08-clean.wav"
+    }
+  ],
+  "duration": 86.70088495575222
+}

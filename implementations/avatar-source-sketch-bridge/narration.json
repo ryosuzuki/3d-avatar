@@ -1,0 +1,46 @@
+[
+  {
+    "name": "fish",
+    "parts": [
+      "These are the actual supplied vector strokes. The presenter traces their outline and details, instead of reconstructing lines from a mesh.",
+      "This actual diffusion image is the next intermediate.",
+      "Hunyuan predicts the volume from that image, including unobserved surfaces. The inference output is preserved; a declared lighter mesh supports this display.",
+      "The original drawing remains as a faint reference while the volume turns. Registration is uniform and approximate: the learned contour can differ. This shape has real depth, but its gentle swimming is authored, not an anatomical rig."
+    ],
+    "durations": [
+      8.304,
+      3.912,
+      10.704,
+      15.864
+    ],
+    "cueTimes": {
+      "drawEnd": 8.304,
+      "imageEnd": 12.216000000000001,
+      "morphEnd": 17.216,
+      "turnStart": 22.92,
+      "duration": 38.784000000000006
+    }
+  },
+  {
+    "name": "owl",
+    "parts": [
+      "The same renderer now traces the actual supplied owl paths, including the eyes, wings, and feathers. These strokes existed before neural image or shape generation.",
+      "Again, the conditioned image is a real intermediate.",
+      "Tripo S R is a different learned model. Its predicted mesh includes a rounded body and unobserved surfaces, not just a symmetric inflation of the drawing.",
+      "The camera reveals that volume, while a few silhouette contours keep it readable. We do not draw every triangle. Neither model guarantees anatomy or exact sketch fidelity. The common pipeline preserves the source drawing, inference provenance, and separate display registration."
+    ],
+    "durations": [
+      11.904,
+      3.504,
+      9.768,
+      18.168
+    ],
+    "cueTimes": {
+      "drawEnd": 11.904,
+      "imageEnd": 15.408,
+      "morphEnd": 20.408,
+      "turnStart": 25.176000000000002,
+      "duration": 43.344
+    }
+  }
+]

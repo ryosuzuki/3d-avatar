@@ -1,0 +1,42 @@
+;FFMETADATA1
+title=Living Sketch Collection
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=28000
+title=Pendulum / motion becomes waveform
+[CHAPTER]
+TIMEBASE=1/1000
+START=28000
+END=62000
+title=Fish / outline unfolds and swims
+[CHAPTER]
+TIMEBASE=1/1000
+START=62000
+END=98000
+title=Landscape / ridge, river and clouds
+[CHAPTER]
+TIMEBASE=1/1000
+START=98000
+END=128000
+title=Water / circles become H2O
+[CHAPTER]
+TIMEBASE=1/1000
+START=128000
+END=164000
+title=Dinosaur / outline becomes walking creature
+[CHAPTER]
+TIMEBASE=1/1000
+START=164000
+END=200000
+title=Attention / spatial heads and weights
+[CHAPTER]
+TIMEBASE=1/1000
+START=200000
+END=236000
+title=Gas / volume, temperature and pressure
+[CHAPTER]
+TIMEBASE=1/1000
+START=236000
+END=272000
+title=Body / schematic lungs and heart

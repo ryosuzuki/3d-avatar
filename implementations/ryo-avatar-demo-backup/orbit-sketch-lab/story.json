@@ -1,0 +1,66 @@
+{
+  "title": "When a sketch becomes a world",
+  "voice": {
+    "provider": "OpenAI",
+    "model": "gpt-4o-mini-tts",
+    "voice": "shimmer",
+    "cloned": false
+  },
+  "segments": [
+    {
+      "id": "S01",
+      "headline": "A line is a beginning",
+      "narration": "What if a sketch could become something we can walk around? Here, the original Ryo avatar stands inside today’s iPad scan. A simple orbital laboratory begins with a pen and three circles.",
+      "start": 0.65,
+      "end": 12.6445,
+      "duration": 11.994458,
+      "audio": "S01-clean.wav"
+    },
+    {
+      "id": "S02",
+      "headline": "Keep the original marks",
+      "narration": "Watch the tip. Each line appears exactly where the pen travels. These are persistent curves, not pictures waiting to be replaced. The same points will carry the idea into space.",
+      "start": 12.8245,
+      "end": 23.9872,
+      "duration": 11.162708,
+      "audio": "S02-clean.wav"
+    },
+    {
+      "id": "S03",
+      "headline": "Let the drawing acquire depth",
+      "narration": "Now the drawing opens. Its circles tilt, widen, and become three dimensional orbits. Nothing cuts to a new diagram. The original curves continuously change shape, and moving planets give them behavior.",
+      "start": 24.1672,
+      "end": 38.9823,
+      "duration": 14.815167,
+      "audio": "S03-clean.wav"
+    },
+    {
+      "id": "S04",
+      "headline": "Reach into the representation",
+      "narration": "Ryo steps beside the model and reaches for the middle orbit. Tilting its plane changes the path that the planet actually follows. The representation is also a control surface: the change stays in the world.",
+      "start": 39.1623,
+      "end": 53.2875,
+      "duration": 14.125208,
+      "audio": "S04-clean.wav"
+    },
+    {
+      "id": "S05",
+      "headline": "Make time a material",
+      "narration": "Now speed up time. The planets travel faster around their existing paths. The camera moves with us, revealing the depth that a flat explanation would hide. This is an illustrative orbital model, not a scale model of our solar system.",
+      "start": 53.4675,
+      "end": 67.6332,
+      "duration": 14.165667,
+      "audio": "S05-clean.wav"
+    },
+    {
+      "id": "S06",
+      "headline": "From watching to exploring",
+      "narration": "The portable demo lets you change inclination, time speed, and the transition between sketch and space. Inspired by Chalktalk and dynamic media, it makes a small idea executable. The film is authored choreography, not live sketch recognition. The controls are real.",
+      "start": 67.8132,
+      "end": 85.4584,
+      "duration": 17.645208,
+      "audio": "S06-clean.wav"
+    }
+  ],
+  "duration": 86.188
+}

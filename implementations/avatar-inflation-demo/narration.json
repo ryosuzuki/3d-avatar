@@ -1,0 +1,6 @@
+{
+  "fish": "Start with one rough closed fish outline. The same boundary stays in place as its interior gains depth. This is a real mesh, not a flat cutout. Swimming is only an illustrative deformation.",
+  "octopus": "Now use the same operation on a many armed silhouette. There is no octopus category or model lookup. Distance from the boundary controls the surface thickness. Concave outlines also become a closed volume.",
+  "leaf": "A leaf follows exactly the same pipeline. Its outline becomes a softly inflated surface. Sparse contour bands and camera movement reveal the depth, without hiding the shape under every triangle edge.",
+  "unseen": "Finally, try a new asymmetric shape with no category name. The original corners remain, and the interior inflates. This works for simple closed silhouettes, but does not infer hidden anatomy or articulated parts."
+}

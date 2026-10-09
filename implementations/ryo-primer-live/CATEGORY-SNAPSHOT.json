@@ -1,0 +1,237 @@
+{
+  "sourceRepo": "https://github.com/ryosuzuki/ryo-primer-live",
+  "sourceCommit": "8b0d67cfb1fec53e8d21a7f68ab17edb47915183",
+  "snapshotDate": "2026-10-09",
+  "publicSourceOnly": true,
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "4570eda2c29019b945be06bdbd6cf4aa25a47e203adf25f9ae1cf34cd44df9fd",
+      "sourceGitBlob": "44d57ee4a2e445e98d389ffbde0859682c7bef92",
+      "sanitized": true
+    },
+    {
+      "path": "README.md",
+      "sha256": "488d2ec45008fd0608f1ec87178161ad80eedb60b0fbcbf49845cb220cfd128d",
+      "sourceGitBlob": "15abd7d7ad32b61ba5a197fbcad9ff28fb221d07",
+      "sanitized": true
+    },
+    {
+      "path": "app.js",
+      "sha256": "2a4ff745b7307ab60b91dec7f68a8e7ac00c3911cd910ac53386c48f6c743989",
+      "sourceGitBlob": "b026ecbd3aef225425203a9da73d73bb666e4693",
+      "sanitized": true
+    },
+    {
+      "path": "assess-results.py",
+      "sha256": "94e4f15f8acab37f0984db2c391e81ee818866ef3acd018406d2523e9ccdc0d4",
+      "sourceGitBlob": "30dd02a1033e9371ceac199419d5cc495a7debda",
+      "sanitized": true
+    },
+    {
+      "path": "avatar.js",
+      "sha256": "133331ffaa70d7894e88800f78fd1fa5c39864e81244bb99ef1abc00c9dc4fc4",
+      "sourceGitBlob": "c13fed31e635187b9a965487efaeeef093a09e1f",
+      "sanitized": true
+    },
+    {
+      "path": "bench-fast-selector.py",
+      "sha256": "14a7b384151040eece2deec20c567ea68ab2ffeb89c10af10725144036756101",
+      "sourceGitBlob": "9757ac42c414a133ff5fa2480e6757a2e3e13b55",
+      "sanitized": true
+    },
+    {
+      "path": "catalog.py",
+      "sha256": "54986292afec6aaa46ce80916a80ade8407fd6e394483579e0999cfabe399729",
+      "sourceGitBlob": "fcfdbc697b9b773253edf2a615991e6cdee6b9d6",
+      "sanitized": true
+    },
+    {
+      "path": "convert-videos.py",
+      "sha256": "f5bdc99199c5ffa863c9989e34cb841d605180550410cfc527e62e928a376b77",
+      "sourceGitBlob": "02b3cc4d83ac05ae755af674fda598ac4dc9df34",
+      "sanitized": true
+    },
+    {
+      "path": "convert-walkthrough.py",
+      "sha256": "1b46037b1354084d21d28be972c348c4c1587d1a4009f4670ab63085bfc684c2",
+      "sourceGitBlob": "4bb01ea685d98c0fb880c63be3608d614bc8f870",
+      "sanitized": true
+    },
+    {
+      "path": "facts.py",
+      "sha256": "f3c6a88625f79d4e63719e81433fd4d839e5b03d703f5e18b9393735c1810df3",
+      "sourceGitBlob": "48211c10336632c38abd7625aa341095f3e06428",
+      "sanitized": true
+    },
+    {
+      "path": "finalize-captions.py",
+      "sha256": "256c985f89fcfca24ecf1399057ff45e6e9314f178a2e7cb31c5e6a6e4a894c7",
+      "sourceGitBlob": "40144d24dd8fb1679a5774e3b520fad4f5856bc0",
+      "sanitized": true
+    },
+    {
+      "path": "gallery.html",
+      "sha256": "74b7bb69a7923c02c356adb49e02d8e414123cc943e54df6394e8a09e4615e00",
+      "sourceGitBlob": "a90d34fc0cc16191b513f288592aba8801f949ab",
+      "sanitized": true
+    },
+    {
+      "path": "gallery.js",
+      "sha256": "dd1db96027fc1c3cad283f19e90c9ab15c4573cef5a3b549c0a44bf372af0755",
+      "sourceGitBlob": "d0a4ba154ff26aeace6ac3c4734e70eb9a96a01d",
+      "sanitized": true
+    },
+    {
+      "path": "index.html",
+      "sha256": "002103c9f39215a8dd4f0eabeef9fd588d9ad847a81610a7993ccd7040281735",
+      "sourceGitBlob": "b61a945b7871417dc18025d3c86ec782282f9c50",
+      "sanitized": true
+    },
+    {
+      "path": "make-montage.py",
+      "sha256": "f4602baa8ecda307827adc0e9fea7ff3e93ce61e5c768f462b06f4e80e45f31c",
+      "sourceGitBlob": "878364cf7864a01b6b73a026955ec68d384a267b",
+      "sanitized": true
+    },
+    {
+      "path": "media-audit.py",
+      "sha256": "33575c1153e7ef8de945e152c93bd827af88e1379135877766094fdf466769c3",
+      "sourceGitBlob": "35e8222acef2e56608a071b66c7c748b02493be4",
+      "sanitized": true
+    },
+    {
+      "path": "package-delivery.py",
+      "sha256": "3bac63b01d5bd03c8febfd08b1748c4f095466e84b6a7f836e609c9ff0791891",
+      "sourceGitBlob": "2aa03de2652bd991a1be22c1cf1e3b2e9e3c3389",
+      "sanitized": true
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "b78acf40712d00f49c5f7e0d0fccdbc82d1d3a2f547b9a40c27d4fc7875e4468",
+      "sourceGitBlob": "227f75cfbb3cc07f13b06554168956f6accdcb27",
+      "sanitized": true
+    },
+    {
+      "path": "package.json",
+      "sha256": "85dd471f940d7094cde780dad0c36e96a957bea2aa476df3b266d1f89ed0838b",
+      "sourceGitBlob": "2d3e1ac1b983c8a357b7dc48fe6b8d7a63508f22",
+      "sanitized": true
+    },
+    {
+      "path": "preflight.mjs",
+      "sha256": "2e614c7de4a297b05b4ef302a9b726b16b45c97e2bb800fd2b66028faa6b82aa",
+      "sourceGitBlob": "b972530bbf16436efbf5123ce821a25853173ce1",
+      "sanitized": true
+    },
+    {
+      "path": "probe.mjs",
+      "sha256": "ab7c39922a06428be6fb1e093a81c437826f9cc422c629f06b01053372b14788",
+      "sourceGitBlob": "6c71354410eb23fe8467fec634988a52b1bcf74c",
+      "sanitized": true
+    },
+    {
+      "path": "recover-destination.mjs",
+      "sha256": "c5e66b76aabc4f80bade085d0c78e3c46cd48efcf15ea77e31ca0d16afa21716",
+      "sourceGitBlob": "7bf0df4d9f3064b38efabf7d0906496d75e7cbe7",
+      "sanitized": true
+    },
+    {
+      "path": "review-audio.py",
+      "sha256": "92a5aeadc544a2936915b90faf881c99b0625310ea7585e6099c40d0d6e1f230",
+      "sourceGitBlob": "17cec66090232d17a829aee8f4f6c151ec973762",
+      "sanitized": true
+    },
+    {
+      "path": "review-program.py",
+      "sha256": "7319c54efef6f951caba08486d06609606afb771bc6278eea024e2c52f3332aa",
+      "sourceGitBlob": "4adb835a26ed4818dc42be1aae8f1dff390b8484",
+      "sanitized": true
+    },
+    {
+      "path": "rig.js",
+      "sha256": "44a42653ac3ce38fa0ca98e4ade009645d51a3959d2ae6e9b3656ebee2b4304e",
+      "sourceGitBlob": "85a2d2e52accbbcfb441c5aa3c5dc9a8946a1b77",
+      "sanitized": true
+    },
+    {
+      "path": "room.js",
+      "sha256": "93e06c4d04bce9e0bf70884737af48566c0266d685af7953f79da0338990536c",
+      "sourceGitBlob": "9c26caf249b958bde69ebb021e6497a3054e6f1a",
+      "sanitized": true
+    },
+    {
+      "path": "server.py",
+      "sha256": "4cfef76193521b2aa53ddfd874b72d4ee20ccbc1251501026b490fe9451deac9",
+      "sourceGitBlob": "904e4d39233095169bfb2e504810bcb096a54ec6",
+      "sanitized": true
+    },
+    {
+      "path": "stage-media.py",
+      "sha256": "f1a78568a3af355358044a1ce1589732867e7f668fdc31cbdf9f60bd06245452",
+      "sourceGitBlob": "6d9184bf3b279ba449e0ffb66ed3e03858b1ed99",
+      "sanitized": true
+    },
+    {
+      "path": "test-catalog.py",
+      "sha256": "7e75b1d2a9bff1f31c71075b655323c860f0e69cf88e442d1970b19d7d89700e",
+      "sourceGitBlob": "38c4127bfbcbbd141b3ff76bcd7148782b8258f6",
+      "sanitized": true
+    },
+    {
+      "path": "test-server-repair.py",
+      "sha256": "c148aec55c28ed1852d0444a44e4252c08aeef6281787f585e16eeac2ad01f1c",
+      "sourceGitBlob": "5a701b0eb2d91883fbf72c99ce7a90ff49fa1030",
+      "sanitized": true
+    },
+    {
+      "path": "validate-program.py",
+      "sha256": "17f22a87cb39ced2d1f4da6c20ec674676882c3cb2f0fa67ed17cd59d32364a8",
+      "sourceGitBlob": "e200d3fcb48739902825b4244cfeae6a58855d36",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/gaussian-splats-3d-license.txt",
+      "sha256": "eaf88512a83fc007481fee3c10b6b6e3dbab64bd6d0d3c64416decf86dbc9440",
+      "sourceGitBlob": "6370ba2d8eab2956c2fd997d7b5d16470c790b99",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/gaussian-splats-3d.module.js",
+      "sha256": "f273394134c9174e49bf42bb4ea0945caaad4fdd63023b8996cc6cd248f52a6b",
+      "sourceGitBlob": "5edf354a654df8c40d6feaac2898040c9043590c",
+      "sanitized": true
+    },
+    {
+      "path": "vendor/three-license.txt",
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "sourceGitBlob": "8ada2a5f982916b0ba4b7a0aa7de347587e745d7",
+      "sanitized": true
+    },
+    {
+      "path": "verify-delivery.mjs",
+      "sha256": "05a34d336bb59f28055bcb4f13722ecbd7ba46e8beb2cba059c45517724f1d39",
+      "sourceGitBlob": "9985b9a3d3c33c421051fa2e1af14a7756c0c038",
+      "sanitized": true
+    },
+    {
+      "path": "visual-proof.py",
+      "sha256": "e45bccee20d0a7b20e9e7a1aa4978e735fc8dae9e111061aa4a7180af7a9a73f",
+      "sourceGitBlob": "d896284673709616bbd4019dcd8810df7ce767c1",
+      "sanitized": true
+    },
+    {
+      "path": "cases.json",
+      "sha256": "5340e9fa337de1dc257ca7e22745332ab746529e9c7b96b57f1a42baaecf582a",
+      "sourceGitBlob": "373ccd44fc65422095c04ac99b0b5f590d7618e8",
+      "sanitized": true
+    },
+    {
+      "path": "story.json",
+      "sha256": "111dde91fd48fd703dc143ad8e24a5fdafef1f848688bb5201e2624181ced233",
+      "sourceGitBlob": "da1f2d3a646be3263f8da38f44e8de781bcbf48e",
+      "sanitized": true
+    }
+  ],
+  "assets": "Not included. Bring your own room/avatar/capture data; see ASSETS.md. Full private restore provenance is preserved separately."
+}

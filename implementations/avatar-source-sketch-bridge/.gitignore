@@ -1,0 +1,8 @@
+.venv/
+node_modules
+__pycache__/
+assets/*.ply
+audio/*.mp3
+audio/*.wav
+
+review.mp4

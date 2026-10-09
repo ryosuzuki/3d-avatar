@@ -1,0 +1,14 @@
+{
+  "name": "avatar-inflation-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 server.py",
+    "capture": "node capture.mjs",
+    "verify": ".venv/bin/python verify.py"
+  },
+  "devDependencies": {
+    "playwright-core": "1.64.0"
+  }
+}

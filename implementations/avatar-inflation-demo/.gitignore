@@ -1,0 +1,6 @@
+.venv/
+node_modules
+__pycache__/
+assets/*.ply
+meshes/*.mp3
+review.mp4

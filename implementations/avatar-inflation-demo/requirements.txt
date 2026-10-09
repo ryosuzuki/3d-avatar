@@ -1,0 +1,6 @@
+numpy
+trimesh
+shapely
+matplotlib
+networkx
+scipy

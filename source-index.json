@@ -1,0 +1,72 @@
+[
+  {
+    "name": "ryo-body-scan-walk",
+    "folder": "implementations/ryo-body-scan-walk",
+    "commit": "331d4413492590258763d63378a9ea9e1f201171",
+    "files": 11,
+    "sourceOnly": true
+  },
+  {
+    "name": "lhm-body-room-walk",
+    "folder": "implementations/lhm-body-room-walk",
+    "commit": "eba77228b512f9d9bd997a22e9f41265ea40af74",
+    "files": 15,
+    "sourceOnly": true
+  },
+  {
+    "name": "video-pose-twin",
+    "folder": "implementations/video-pose-twin",
+    "commit": "41c4457aa0b06beec6a768af851821933c127726",
+    "files": 21,
+    "sourceOnly": true
+  },
+  {
+    "name": "ryo-avatar-demo-backup",
+    "folder": "implementations/ryo-avatar-demo-backup",
+    "commit": "aa51a6be7b34ae8c00a151e415a1ab0db4318f82",
+    "files": 291,
+    "sourceOnly": true
+  },
+  {
+    "name": "ryo-primer-live",
+    "folder": "implementations/ryo-primer-live",
+    "commit": "8b0d67cfb1fec53e8d21a7f68ab17edb47915183",
+    "files": 38,
+    "sourceOnly": true
+  },
+  {
+    "name": "avatar-generalized-sketch-v2",
+    "folder": "implementations/avatar-generalized-sketch-v2",
+    "commit": "bf6b71848f7957bc87ffebc2666fb9ded4e47062",
+    "files": 51,
+    "sourceOnly": true
+  },
+  {
+    "name": "avatar-generalized-sketch",
+    "folder": "historical/avatar-generalized-sketch",
+    "commit": "c09d271feb2c18a93cf3ad9df19f8941297e751f",
+    "files": 31,
+    "sourceOnly": true
+  },
+  {
+    "name": "avatar-inflation-demo",
+    "folder": "implementations/avatar-inflation-demo",
+    "commit": "ac8be8ec08847bea4539940a570e9f5d53988ac0",
+    "files": 32,
+    "sourceOnly": true
+  },
+  {
+    "name": "avatar-source-sketch-bridge",
+    "folder": "implementations/avatar-source-sketch-bridge",
+    "commit": "195eee668d57845973dee1803659d135aa35c4d4",
+    "files": 28,
+    "sourceOnly": true
+  },
+  {
+    "name": "avatar-sketch-rendering-study",
+    "folder": "implementations/avatar-sketch-rendering-study",
+    "commit": "ff856fc0bbbad8287f7cd8a9ad16433a7a97641c",
+    "files": 26,
+    "sourceOnly": true
+  }
+]

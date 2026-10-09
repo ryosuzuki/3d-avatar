@@ -1,0 +1,13 @@
+{
+  "name": "shared-gaussian-avatar-explainer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "capture": "node capture.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.64.0"
+  }
+}

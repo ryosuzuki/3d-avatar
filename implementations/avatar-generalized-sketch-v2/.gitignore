@@ -1,0 +1,16 @@
+node_modules/
+.venv/
+__pycache__/
+assets/*.ply
+source/*.glb
+generated/*.mp3
+generated/*.glb
+generated/*.obj
+generated/*.mp4
+
+node_modules
+
+generated/jobs/**/*.glb
+generated/jobs/**/*.obj
+generated/jobs/**/.execution.log
+generated/jobs/**/.state-*.tmp

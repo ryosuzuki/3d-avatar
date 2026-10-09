@@ -1,0 +1,1 @@
+{"name":"shared-gaussian-avatar-interaction","version":"0.1.0","private":true,"type":"module","scripts":{"start":"node server.mjs"},"devDependencies":{"playwright-core":"1.64.0"}}

@@ -1,0 +1,38 @@
+{
+  "duration": 38,
+  "voice": "OpenAI gpt-4o-mini-tts shimmer",
+  "segments": [
+    {
+      "id": "0",
+      "start": 0,
+      "end": 9,
+      "duration": 9,
+      "headline": "Draw a pendulum",
+      "narration": "A line, a string, and a circle. I begin with a simple sketch, right here in the room."
+    },
+    {
+      "id": "1",
+      "start": 9,
+      "end": 18,
+      "duration": 9,
+      "headline": "The same lines become volume",
+      "narration": "Now the drawing lifts off the board. The circle opens into a wireframe sphere. It is still the same sketch."
+    },
+    {
+      "id": "2",
+      "start": 18,
+      "end": 25,
+      "duration": 7,
+      "headline": "Set the drawing in motion",
+      "narration": "A nudge brings it to life. The pendulum swings through the space beside me."
+    },
+    {
+      "id": "3",
+      "start": 25,
+      "end": 38,
+      "duration": 13,
+      "headline": "Draw what the motion means",
+      "narration": "I draw its motion as a wave. Sketching is no longer just a picture. It becomes a way to explain something that moves."
+    }
+  ]
+}

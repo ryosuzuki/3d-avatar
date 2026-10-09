@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "slug": "attention-basic",
+    "question": "Explain scaled dot-product attention with query [1,0,1], keys [[1,0,1],[0,1,0],[-1,0,1]], scale 1. Show the weights.",
+    "expectedKind": "attention",
+    "followup": false
+  },
+  {
+    "id": 2,
+    "slug": "attention-sharpen",
+    "question": "Keep the same keys and query but set scale to 2. Compare the attention weights with the previous answer.",
+    "expectedKind": "attention",
+    "followup": true
+  },
+  {
+    "id": 3,
+    "slug": "transformer",
+    "question": "Explain how a transformer uses attention, residual connections and feed-forward layers. Use a conceptual flow, not invented empirical values.",
+    "expectedKind": "flow",
+    "followup": false
+  },
+  {
+    "id": 4,
+    "slug": "triangle-345",
+    "question": "Show a right triangle with legs 3 and 4 and explain Pythagoras.",
+    "expectedKind": "triangle",
+    "followup": false
+  },
+  {
+    "id": 5,
+    "slug": "triangle-56",
+    "question": "Show a right triangle with legs 5 and 6, explain how the hypotenuse is calculated.",
+    "expectedKind": "triangle",
+    "followup": false
+  },
+  {
+    "id": 6,
+    "slug": "unit-circle-30",
+    "question": "Explain sine and cosine using a unit circle at 30 degrees.",
+    "expectedKind": "unitcircle",
+    "followup": false
+  },
+  {
+    "id": 7,
+    "slug": "unit-circle-120",
+    "question": "Use a unit circle at 120 degrees to explain why cosine is negative.",
+    "expectedKind": "unitcircle",
+    "followup": false
+  },
+  {
+    "id": 8,
+    "slug": "wave-frequency",
+    "question": "Show a sine wave of amplitude 0.6 and frequency 1 Hz. Explain frequency and amplitude.",
+    "expectedKind": "wave",
+    "followup": false
+  },
+  {
+    "id": 9,
+    "slug": "wave-followup",
+    "question": "Keep amplitude 0.6, change frequency to 2 Hz. Explain what changes and what stays constant.",
+    "expectedKind": "wave",
+    "followup": true
+  },
+  {
+    "id": 10,
+    "slug": "pendulum",
+    "question": "Explain small-angle pendulum motion with an illustrative amplitude 0.4 and frequency 0.8 Hz. Clearly label the graph as an illustrative angle signal.",
+    "expectedKind": "pendulum",
+    "followup": false
+  },
+  {
+    "id": 11,
+    "slug": "spring",
+    "question": "Explain small spring oscillations as a sine signal amplitude 0.5 frequency 1.5 Hz; explain the dependence on stiffness and mass without inventing their values.",
+    "expectedKind": "spring",
+    "followup": false
+  },
+  {
+    "id": 12,
+    "slug": "damped",
+    "question": "Show damped oscillations with damping 0.3 and frequency 1 Hz. Explain energy dissipation.",
+    "expectedKind": "damped",
+    "followup": false
+  },
+  {
+    "id": 13,
+    "slug": "projectile-45",
+    "question": "Show a projectile launched at 12 m/s and 45 degrees. Compute range and maximum height, assuming equal launch/landing height and no drag.",
+    "expectedKind": "projectile",
+    "followup": false
+  },
+  {
+    "id": 14,
+    "slug": "projectile-followup",
+    "question": "Keep speed 12 m/s but change launch angle to 30 degrees. What changes in range and height?",
+    "expectedKind": "projectile",
+    "followup": true
+  },
+  {
+    "id": 15,
+    "slug": "orbit-circular",
+    "question": "Show an orbit with eccentricity 0 and explain the focus and shape. Not a scaled solar system.",
+    "expectedKind": "orbit",
+    "followup": false
+  },
+  {
+    "id": 16,
+    "slug": "orbit-elliptical",
+    "question": "Show an elliptical orbit with eccentricity 0.7 and the star at a focus. Explain how this differs from a circle.",
+    "expectedKind": "orbit",
+    "followup": false
+  },
+  {
+    "id": 17,
+    "slug": "logistic",
+    "question": "Explain logistic population growth with rate 0.8 and carrying capacity normalized to 1. Show saturation.",
+    "expectedKind": "growth",
+    "followup": false
+  },
+  {
+    "id": 18,
+    "slug": "compound",
+    "question": "Explain compound interest at 10 percent annual growth over ten years. Start with normalized principal 1.",
+    "expectedKind": "exponential",
+    "followup": false
+  },
+  {
+    "id": 19,
+    "slug": "decay",
+    "question": "Explain exponential radioactive decay with rate 0.5 per time unit. Show the remaining fraction, not exact isotopic measurements.",
+    "expectedKind": "decay",
+    "followup": false
+  },
+  {
+    "id": 20,
+    "slug": "normal-narrow",
+    "question": "Show a normal probability density with mean 0 and sigma 0.6. Explain density versus probability.",
+    "expectedKind": "normal",
+    "followup": false
+  },
+  {
+    "id": 21,
+    "slug": "normal-wide",
+    "question": "Show a normal probability density with mean 0 and sigma 1.8. Explain why it is wider and lower.",
+    "expectedKind": "normal",
+    "followup": false
+  },
+  {
+    "id": 22,
+    "slug": "bayes-rare",
+    "question": "Explain Bayes for prior 0.01, sensitivity 0.9, false positive rate 0.05. Show posterior after one positive result; educational example not medical advice.",
+    "expectedKind": "bayes",
+    "followup": false
+  },
+  {
+    "id": 23,
+    "slug": "bayes-common",
+    "question": "Use prior 0.3, sensitivity 0.9, false positive 0.05. Explain how the prior changes the posterior.",
+    "expectedKind": "bayes",
+    "followup": false
+  },
+  {
+    "id": 24,
+    "slug": "ohms-law",
+    "question": "Explain Ohms law for 9 volts across a 100 ohm ideal resistor. Show current.",
+    "expectedKind": "circuit",
+    "followup": false
+  },
+  {
+    "id": 25,
+    "slug": "resistor-followup",
+    "question": "Keep 9 volts but increase the resistance to 300 ohms. Explain the new current.",
+    "expectedKind": "circuit",
+    "followup": true
+  },
+  {
+    "id": 26,
+    "slug": "lens",
+    "question": "Explain a thin converging lens with focal length 1 and object distance 3, using consistent length units. Show the image distance and inverted image.",
+    "expectedKind": "lens",
+    "followup": false
+  },
+  {
+    "id": 27,
+    "slug": "vector",
+    "question": "Show the vector (1.5, 1.2) and explain its magnitude and components.",
+    "expectedKind": "vector",
+    "followup": false
+  },
+  {
+    "id": 28,
+    "slug": "water",
+    "question": "Why is H2O bent? Show its 104.5 degree geometry and explain electron domains and polarity.",
+    "expectedKind": "molecule",
+    "followup": false
+  },
+  {
+    "id": 29,
+    "slug": "carbon-dioxide",
+    "question": "Why is CO2 linear? Show 180 degrees and double bonds. Compare polarity with water in the explanation.",
+    "expectedKind": "molecule",
+    "followup": false
+  },
+  {
+    "id": 30,
+    "slug": "japanese-photosynthesis",
+    "question": "光合成を日本語で、光・水・二酸化炭素から糖と酸素ができる流れとして説明して。化学構造ではなく概念図を描いて。",
+    "expectedKind": "flow",
+    "followup": false
+  }
+]

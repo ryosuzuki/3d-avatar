@@ -1,0 +1,1 @@
+{"name":"avatar-generalized-sketch","version":"0.1.0","private":true,"type":"module","scripts":{"start":"python3 server.py --port 8824","capture":"node capture.mjs","verify":"python3 verify.py"},"devDependencies":{"playwright-core":"1.64.0"}}

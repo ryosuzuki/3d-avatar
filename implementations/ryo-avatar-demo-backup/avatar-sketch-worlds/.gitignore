@@ -1,0 +1,7 @@
+node_modules
+__pycache__/
+.DS_Store
+.env*
+assets/*
+!assets/source-provenance.json
+*.mp4
