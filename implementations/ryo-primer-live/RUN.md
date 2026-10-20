@@ -1,3 +1,3 @@
-# 実行
+# Run
 
-公開ソースのみの独立 snapshot。元 README の起動コマンドを参照してください。個人の部屋・アバター・録画は含みません。元の固定ローカルパスは `/path/to/local-assets` に置換済みです。ご自身の素材で指定箇所を設定してください。API機能には別途認証が必要。分類作業ではAPI呼出し・実機検証をしていません。各構成の制約は README を参照。
+This is an independent, public source-only snapshot. Follow the startup commands in the adjacent README. Personal rooms, avatars, and recordings are not bundled. Original fixed local paths have been replaced with `/path/to/local-assets`; configure the indicated settings using your own assets. API features require separate credentials. Catalog preparation did not invoke APIs or test physical devices. See the README for implementation-specific limitations and recording links. Loopback URLs are local run targets, not public interactive demos.

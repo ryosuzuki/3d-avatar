@@ -1,5 +1,5 @@
-# Bring your own assets
+# Assets
 
-公開リポジトリには個人の部屋・録画・人物モデル・スクリーンショット・private logs は含みません。元の絶対パスは `/path/to/local-assets` に置換しています。各 server / viewer の asset URL をご自身のメッシュ、Gaussian、人物モデルまたはキャプチャーへ設定してください。
+This public repository does not bundle personal rooms, recordings, avatar models, screenshots, or private logs. Original absolute paths are replaced with `/path/to/local-assets`. Configure each server/viewer's asset URLs to point to your own mesh, Gaussian model, avatar, or capture.
 
-`implementations/spatial-object-memory` があるカテゴリでは `npm ci && npm run fixture && npm start` で純粋な合成 fixture を生成・実行できます。この合成データは実際の部屋・人物ではありません。他の実装は asset 未提供なので clone だけで元の個人デモが再現するとは主張しません。既存公開動画へのリンクは元 README に残しています。元資産への正確な復元情報は公開Gitには置かず、private の作業記録に保存しています。
+A source clone alone does not reproduce the original personal demonstrations: those assets are not supplied. Public recording links remain in the implementation READMEs. Exact restoration information for private originals is kept outside public Git. This catalog has no public asset-complete interactive deployment; use the local run instructions with your own authorized assets.

@@ -35,12 +35,12 @@ function pill(s,x,y,w,color='#5faea6'){bc.fillStyle=color+'30';bc.strokeStyle=co
 function phaseProgress(i,t){const s=story.segments[i];return clamp((t-s.start)/s.duration)}
 function boardDraw(t){
  const cue=apiPlan?cueFor(apiPlan,story.segments[currentSegment(t)].id):null,accent=COLORS[cue?.emphasis_color]||COLORS.teal;
- bc.clearRect(0,0,1024,768);text('VOICE  ×  GESTURE  ×  SPACE',425,60,24,'#89b9c4');text('説明のタイミングを、共有する。',425,119,29);
+ bc.clearRect(0,0,1024,768);text('VOICE  ×  GESTURE  ×  SPACE',425,60,24,'#89b9c4');text('Share the timing of an explanation.',425,119,29);
  const seg=story.segments[1],d=clamp((t-seg.start-.65)/(seg.duration-.65));drawStroke(drawing,d/.58,accent);drawStroke(circle,(d-.58)/.42,accent);
  if(cue&&t>=story.segments[4].start)text('FOCUS / '+['VOICE','GESTURE','SPACE'][nodeFocus(cue,phaseProgress(currentSegment(t),t))],425,174,20,accent);
  if(t>=story.segments[2].start){const p=phaseProgress(2,t);text('ONE TIMELINE',420,215,25,'#8de6d0');drawStroke([[425,320],[925,320]],p,accent,5);
   for(let i=0;i<5;i++){const x=465+i*100;if(p>i*.16){bc.fillStyle=i%2?'#ecba80':'#8de9d8';bc.beginPath();bc.arc(x,320,7,0,Math.PI*2);bc.fill();}}
-  text('音声',455,277,26);text('腕の動き',585,277,26);text('描画',820,277,26);
+  text('Voice',455,277,26);text('Arm motion',585,277,26);text('Drawing',820,277,26);
   if(p>.3)drawStroke([[363,355],[415,320]],(p-.3)/.3,'#88cfdf',4);
  }
  if(t>=story.segments[3].start){const p=phaseProgress(3,t),x=425+500*p;bc.strokeStyle='#f7c98e';bc.lineWidth=3;bc.beginPath();bc.moveTo(x,293);bc.lineTo(x,345);bc.stroke();bc.fillStyle='#f6cf92';bc.beginPath();bc.arc(x,320,12,0,Math.PI*2);bc.fill();

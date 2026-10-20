@@ -1,32 +1,47 @@
-# 3d-avatar — 実装別カタログ
+# 3d-avatar — implementation catalog
 
-既存リポジトリは変更・削除せず、確定コミットのソースを追加整理した public ソース分類モノレポです。各実装は独立フォルダです。共通アプリへ統合・API互換化したものではありません。
+Independent, source-only snapshots of avatar prototypes, organized by implementation. The original repositories remain unchanged. These folders are not a unified application or an API-compatibility layer.
 
-## どこから見る？
+## Watch the demos
 
-- [ryo-body-scan-walk](implementations/ryo-body-scan-walk/README.md) — 写真テクスチャ付きスキンメッシュ＋手続き歩行。起動は同フォルダの [RUN.md](implementations/ryo-body-scan-walk/RUN.md)。
-- [lhm-body-room-walk](implementations/lhm-body-room-walk/README.md) — LHM Gaussian アバターを部屋で表示・歩行。起動は同フォルダの [RUN.md](implementations/lhm-body-room-walk/RUN.md)。
-- [video-pose-twin](implementations/video-pose-twin/README.md) — 録画姿勢・カメラ連携のアバター表示。起動は同フォルダの [RUN.md](implementations/video-pose-twin/RUN.md)。
-- [ryo-avatar-demo-backup](implementations/ryo-avatar-demo-backup/README.md) — 説明・描画・物体操作の複数アバターデモ集。起動は同フォルダの [RUN.md](implementations/ryo-avatar-demo-backup/RUN.md)。
-- [ryo-primer-live](implementations/ryo-primer-live/README.md) — カタログ選択型 Q&A＋計算スケッチ＋音声。起動は同フォルダの [RUN.md](implementations/ryo-primer-live/RUN.md)。
-- [avatar-generalized-sketch-v2](implementations/avatar-generalized-sketch-v2/README.md) — 一般化スケッチの改良統合版。起動は同フォルダの [RUN.md](implementations/avatar-generalized-sketch-v2/RUN.md)。
-- [avatar-generalized-sketch](historical/avatar-generalized-sketch/README.md) — v1（履歴。v2との比較用）。起動は同フォルダの [RUN.md](historical/avatar-generalized-sketch/RUN.md)。
-- [avatar-inflation-demo](implementations/avatar-inflation-demo/README.md) — 閉じた輪郭の inflation をアバターで見せる。起動は同フォルダの [RUN.md](implementations/avatar-inflation-demo/RUN.md)。
-- [avatar-source-sketch-bridge](implementations/avatar-source-sketch-bridge/README.md) — 元スケッチとアバターの連携。起動は同フォルダの [RUN.md](implementations/avatar-source-sketch-bridge/RUN.md)。
-- [avatar-sketch-rendering-study](implementations/avatar-sketch-rendering-study/README.md) — 描画・表示方法の比較実験。起動は同フォルダの [RUN.md](implementations/avatar-sketch-rendering-study/RUN.md)。
+These are **recorded demonstrations**, not hosted interactive applications:
 
-## 実装の区分と限界
+- [Avatar walking in a scanned room](https://youtu.be/BF8diLWpprU) — photo-textured skinned body and procedural gait.
+- [LHM Gaussian avatar room walk](https://youtu.be/VVbNbpoQCKg) — avatar locomotion in a captured room.
+- [Video-driven pose digital twin](https://youtu.be/bolyiEQwc68) — recorded pose and camera coordination.
+- [Walk, grasp, carry, and release](https://youtu.be/jT1BSvjkJBI) — Gaussian avatar interaction.
+- [Spatial explainer](https://youtu.be/xuH24o_L9Eo) and [room explainer](https://youtu.be/WGyo7UWuWEI).
+- [iPad Scaniverse avatar explainer](https://youtu.be/1z5merL9pps) and [mesh avatar explainer](https://youtu.be/S2B1t99FFGM).
+- [Transformer avatar explainer](https://youtu.be/UrbC0QWnVQk) and [pen sketch](https://youtu.be/50rebBKIZ0Y).
+- [Orbit Sketch Lab](https://youtu.be/CHRsjzaA93Q) and [Chalk Sketch Lab](https://youtu.be/Xs4JrjqZt6I).
 
-基本は desktop WebGL／Web サーバーでのプロトタイプです。Unity/Quest 実機に移植したという意味ではありません。各 README に元の方式、起動コマンド、検証済み範囲があります。モデル推論・3D生成アルゴリズムは [3d-generation](https://github.com/ryosuzuki/3d-generation)、追跡プラットフォームは [image-tracking](https://github.com/ryosuzuki/image-tracking) に分類。アバターと部屋の一体型デモはソース重複を承知で実用単位を保持しています。
+**Interactive demos:** there is no public, asset-complete browser deployment in this catalog. Follow each implementation's README and RUN.md to serve it locally with your own assets. A `127.0.0.1` address refers to your own computer, not a shared internet demo. Original private delivery recordings and source notes do not make private avatar/room assets public.
 
-このカタログの検証はソース同一性・JS/Python構文・復元情報です。元のデモ動画は元 README のリンクを利用。新しい実機テストやAI呼び出しはしていません。
+## Choose an implementation
 
-## 再現性
+- [ryo-body-scan-walk](implementations/ryo-body-scan-walk/README.md) — photo-textured skinned mesh with procedural walking. [Run instructions](implementations/ryo-body-scan-walk/RUN.md).
+- [lhm-body-room-walk](implementations/lhm-body-room-walk/README.md) — Gaussian avatar display and walking inside a captured room. [Run instructions](implementations/lhm-body-room-walk/RUN.md).
+- [video-pose-twin](implementations/video-pose-twin/README.md) — avatar display driven by recorded pose and camera data. [Run instructions](implementations/video-pose-twin/RUN.md).
+- [ryo-avatar-demo-backup](implementations/ryo-avatar-demo-backup/README.md) — explanation, drawing, and object-manipulation prototypes. [Run instructions](implementations/ryo-avatar-demo-backup/RUN.md).
+- [ryo-primer-live](implementations/ryo-primer-live/README.md) — catalog-routed Q&A, calculated sketches, and synthetic speech. [Run instructions](implementations/ryo-primer-live/RUN.md).
+- [avatar-generalized-sketch-v2](implementations/avatar-generalized-sketch-v2/README.md) — improved generalized-sketch integration. [Run instructions](implementations/avatar-generalized-sketch-v2/RUN.md).
+- [avatar-generalized-sketch](historical/avatar-generalized-sketch/README.md) — historical v1 for comparison with v2. [Run instructions](historical/avatar-generalized-sketch/RUN.md).
+- [avatar-inflation-demo](implementations/avatar-inflation-demo/README.md) — avatar demonstration of closed-contour inflation. [Run instructions](implementations/avatar-inflation-demo/RUN.md).
+- [avatar-source-sketch-bridge](implementations/avatar-source-sketch-bridge/README.md) — source-sketch and avatar integration. [Run instructions](implementations/avatar-source-sketch-bridge/RUN.md).
+- [avatar-sketch-rendering-study](implementations/avatar-sketch-rendering-study/README.md) — comparison of drawing and rendering techniques. [Run instructions](implementations/avatar-sketch-rendering-study/RUN.md).
 
-`source-index.json` と各 `CATEGORY-SNAPSHOT.json` にコミット、Git blob、ソースSHA-256、公開用ソース検証情報を記録。`python3 scripts/verify-snapshots.py` でコピー同一性を検査。素材はご自身で用意してください（ASSETS.md）。
+## Scope and limitations
 
-完了状態: main-integrated を目標。所有者: category consolidation worker。権威あるパス: 本リポジトリの全追加ファイル。元リポジトリの作業ツリーは untouched。
+These are mainly desktop WebGL/web-server prototypes, not verified Unity or Quest ports. Each README describes the original approach, startup commands, and tested scope. Model inference and 3D-generation algorithms are cataloged in [3d-generation](https://github.com/ryosuzuki/3d-generation); tracking platforms are in [image-tracking](https://github.com/ryosuzuki/image-tracking). Integrated avatar-and-room prototypes remain intact even when this duplicates source.
 
-## 認証
+Catalog checks cover source/derivative integrity and JavaScript/Python syntax. They do not constitute new device tests or AI calls. Linked recordings document original demonstrations.
 
-API 機能は `OPENAI_API_KEY`（OpenAI）または `TYPESAFE_API_KEY`（旧 Jev）を環境変数で設定。元の私用認証経路は公開版から外しています。個人スキャンを公開していません。
+## Reproducibility
+
+`source-index.json` and each `CATEGORY-SNAPSHOT.json` preserve original commits, Git blobs, and sanitized source SHA-256 hashes. Reviewed English changes are recorded separately in `ENGLISH-DERIVATIVES.json`; original source identity is not rewritten. Run `python3 scripts/verify-snapshots.py` to check original copies and declared derivatives. Supply your own assets; see [ASSETS.md](ASSETS.md).
+
+Documentation, UI labels, and authored default narration are English. The Primer implementation intentionally retains Japanese-input detection, nondefault Japanese answer localization, and Japanese-language regression fixtures as language-support data. They are not untranslated English UI. Existing Japanese audio recordings remain labeled as Japanese rather than falsely relabeled or regenerated.
+
+## Authentication
+
+Set `OPENAI_API_KEY` (OpenAI) or `TYPESAFE_API_KEY` (legacy Jev) in the environment for API features. Private credential routes and personal scans are not included in this public catalog.

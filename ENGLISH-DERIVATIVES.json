@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-20",
+  "scope": "English documentation/UI/default authored narration; optional Japanese localization and language regression data retained.",
+  "files": [
+    {
+      "path": "implementations/ryo-avatar-demo-backup/shared-gaussian-avatar-explainer/app.js",
+      "snapshot": "implementations/ryo-avatar-demo-backup/CATEGORY-SNAPSHOT.json",
+      "originalSanitizedSha256": "087d0d911990d0075eb7027a272f9529bccfc2a6012187625e584ab7a937a9d6",
+      "currentSha256": "7f22786c43e1b1b3d21470ff1b21d77724b228b60acbb32e3252384883beeb3d",
+      "reason": "Reviewed English documentation, UI, or authored narration derivative; original source commit/blob and snapshot hash remain unchanged."
+    },
+    {
+      "path": "implementations/ryo-avatar-demo-backup/shared-gaussian-avatar-explainer/index.html",
+      "snapshot": "implementations/ryo-avatar-demo-backup/CATEGORY-SNAPSHOT.json",
+      "originalSanitizedSha256": "a2acbc16785eb04dcd60ec76f4f108cbcb4c187e8202d1bdf372ac38edb8e5c1",
+      "currentSha256": "a7725e376b18b5f5476c95a169f8d1af4b44f9a638f062f8be1d8296fa9c3133",
+      "reason": "Reviewed English documentation, UI, or authored narration derivative; original source commit/blob and snapshot hash remain unchanged."
+    },
+    {
+      "path": "implementations/ryo-primer-live/README.md",
+      "snapshot": "implementations/ryo-primer-live/CATEGORY-SNAPSHOT.json",
+      "originalSanitizedSha256": "488d2ec45008fd0608f1ec87178161ad80eedb60b0fbcbf49845cb220cfd128d",
+      "currentSha256": "73f4fb229230c542f95af53f40f7e6e8ae302153969640507dbde5a6530d1ddb",
+      "reason": "Reviewed English documentation, UI, or authored narration derivative; original source commit/blob and snapshot hash remain unchanged."
+    },
+    {
+      "path": "implementations/ryo-primer-live/gallery.html",
+      "snapshot": "implementations/ryo-primer-live/CATEGORY-SNAPSHOT.json",
+      "originalSanitizedSha256": "74b7bb69a7923c02c356adb49e02d8e414123cc943e54df6394e8a09e4615e00",
+      "currentSha256": "dda6491f469afcaac69cd731b97a714155e0f75d9b715eec36bcf51d475d3664",
+      "reason": "Reviewed English documentation, UI, or authored narration derivative; original source commit/blob and snapshot hash remain unchanged."
+    },
+    {
+      "path": "implementations/ryo-primer-live/gallery.js",
+      "snapshot": "implementations/ryo-primer-live/CATEGORY-SNAPSHOT.json",
+      "originalSanitizedSha256": "dd1db96027fc1c3cad283f19e90c9ab15c4573cef5a3b549c0a44bf372af0755",
+      "currentSha256": "f485e27c52f0c0ff8d1e4d0e17849f34dc82dc6db9a71807da53d985070db2de",
+      "reason": "Reviewed English documentation, UI, or authored narration derivative; original source commit/blob and snapshot hash remain unchanged."
+    },
+    {
+      "path": "implementations/ryo-primer-live/make-montage.py",
+      "snapshot": "implementations/ryo-primer-live/CATEGORY-SNAPSHOT.json",
+      "originalSanitizedSha256": "f4602baa8ecda307827adc0e9fea7ff3e93ce61e5c768f462b06f4e80e45f31c",
+      "currentSha256": "931713f05eda57eb46a4cea0a834b5275692073b15b74873a7fd992d976e3c7b",
+      "reason": "Reviewed English documentation, UI, or authored narration derivative; original source commit/blob and snapshot hash remain unchanged."
+    }
+  ]
+}
