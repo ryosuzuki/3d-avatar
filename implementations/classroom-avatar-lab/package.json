@@ -1,0 +1,25 @@
+{
+  "name": "classroom-avatar-lab",
+  "version": "1.0.0",
+  "description": "CU-network classroom LHM++ avatar generation with a serial GPU queue",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.mjs",
+    "build": "esbuild ui.mjs --bundle --format=esm --minify --outfile=app.js && node build-guide.mjs",
+    "test": "node --test test-server.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@mkkellogg/gaussian-splats-3d": "^0.4.7",
+    "busboy": "^1.6.0",
+    "marked": "^18.1.1",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  },
+  "type": "module",
+  "private": true
+}

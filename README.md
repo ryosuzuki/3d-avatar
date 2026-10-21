@@ -17,6 +17,13 @@ These are **recorded demonstrations**, not hosted interactive applications:
 
 **Interactive demos:** there is no public, asset-complete browser deployment in this catalog. Follow each implementation's README and RUN.md to serve it locally with your own assets. A `127.0.0.1` address refers to your own computer, not a shared internet demo. Original private delivery recordings and source notes do not make private avatar/room assets public.
 
+## Classroom Avatar Lab
+
+- [October20 photo/video avatar generation website — full source](implementations/classroom-avatar-lab/README.md)
+- [Reproduce next year: web server, GPU worker, pinned model and patches](implementations/classroom-avatar-lab/RUN.md)
+
+The temporary classroom server is stopped; this is a source archive, not a hosted demo.
+
 ## Choose an implementation
 
 - [ryo-body-scan-walk](implementations/ryo-body-scan-walk/README.md) — photo-textured skinned mesh with procedural walking. [Run instructions](implementations/ryo-body-scan-walk/RUN.md).

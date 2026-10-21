@@ -1,0 +1,13 @@
+node_modules/
+*.log
+.DS_Store
+app.js
+
+data/
+.env
+__pycache__/
+*.pyc
+runtime/source/
+runtime/env/
+runtime/compiler/
+assets/motion_video/

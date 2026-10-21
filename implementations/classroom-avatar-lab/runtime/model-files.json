@@ -1,0 +1,268 @@
+{
+  "files": [
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "arcface_resnet18.pth",
+      "bytes": 102585335,
+      "sha256": "69554b3184575bdda7ecf7f40caf2b0c5ecbd0617b676d2209d8bf0e7e3d8042"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "configuration.json",
+      "bytes": 44,
+      "sha256": null
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "dense_sample_points/1_160000.ply",
+      "bytes": 1920120,
+      "sha256": "b07679d85019cc493ed3b42b7711a4430e1d35754e5e93a64d13f2ec08550ec6"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/flame/2019/female_model.pkl",
+      "bytes": 53023716,
+      "sha256": "cf58da1da1bd72d01751339824a150ff739b5c3be809c8c1c992cccb44546e6b"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/flame/2019/generic_model.pkl",
+      "bytes": 53023716,
+      "sha256": "e7f4f6ac7aa97045b3989893386aa94dc5245ded7105bbbf44116bfdf801a050"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/flame/2019/male_model.pkl",
+      "bytes": 53023716,
+      "sha256": "4ab6cb8f7a51c8eee4fb7ac9db10ccf3f61f0690f471b10919a5ae30addb8e47"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/flame/FLAME_FEMALEl.pkl",
+      "bytes": 53023716,
+      "sha256": "efee38e24c9f9f7cc01120a5a48201a787e97e6e20af455747fd60f3dc06eb68"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/flame/FLAME_MALE.pkl",
+      "bytes": 53023716,
+      "sha256": "5a996eaca4b56b03a0c2907f7dfa3a92680d965fd190d345a7e588f6fa017d1b"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/flame/FLAME_NEUTRAL.pkl",
+      "bytes": 53023716,
+      "sha256": "efcd14cc4a69f3a3d9af8ded80146b5b6b50df3bd74cf69108213b144eba725b"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/flame/Readme.pdf",
+      "bytes": 19260,
+      "sha256": null
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/flame/flame_dynamic_embedding.npy",
+      "bytes": 42639,
+      "sha256": "fd046a4740f5e6837e65622d0e050273bb71bbcb1ad6ab322474013a2a23de37"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/flame/flame_static_embedding.pkl",
+      "bytes": 4380,
+      "sha256": "2881bdad8e61e87aad83a3df2e04655c534694089f68ca7144e7350da9e8ad62"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/flame_assets/flame/FLAME_masks.pkl",
+      "bytes": 215062,
+      "sha256": "ccefbe1ac0774ff78c68caf2c627b4abc067a6555ebeb0be5d5b0812366ab492"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/flame_assets/flame/flame2023.pkl",
+      "bytes": 53023716,
+      "sha256": "8fb1af0db1abb51053ead8fd1f2624a63d01c9602f4a4fb4ea23bd2c82017fa0"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/flame_assets/flame/head_template_mesh.obj",
+      "bytes": 563358,
+      "sha256": null
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/flame_assets/flame/landmark_embedding_with_eyes.npy",
+      "bytes": 32187,
+      "sha256": "a9050103cc98d5505beadca2f9b101acce9a78ebdd5d10cb001fa164ab7d309b"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/flame_assets/flame_arkit_bs.npy",
+      "bytes": 6268832,
+      "sha256": "33f4b588c1fadd227ce668c14b484619f40e7a08c25fdf20b0bc7b28212f43ca"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/flame_assets/pred_expression.json",
+      "bytes": 1428097,
+      "sha256": null
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/flame_assets/shoulder_mesh.obj",
+      "bytes": 186178,
+      "sha256": null
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/flame_assets/teeth_jawopen_offset.npy",
+      "bytes": 1568,
+      "sha256": "da38cf36627942d8fea5a9157c4cb3788a2b7a0a9f331a40aac5f882e29cd616"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/mano/MANO_LEFT.pkl",
+      "bytes": 3821391,
+      "sha256": "c4022f7083f2ca7c78b2b3d595abbab52debd32b09d372b16923a801f0ea6a30"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/mano/MANO_RIGHT.pkl",
+      "bytes": 3821356,
+      "sha256": "45d60aa3b27ef9107a7afd4e00808f307fd91111e1cfa35afd5c4a62de264767"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/pose_estimate/multiHMR_896_L.pt",
+      "bytes": 1286462544,
+      "sha256": "c1b55933eb35df9b27966e1d8d3a69c4bc5e28eee0f0dd7f0cdc41c3f27202ca"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/smpl/SMPL_FEMALE.pkl",
+      "bytes": 39056404,
+      "sha256": "0e8c0bbbbc635dcb166ed29c303fb4bef16ea5f623e5a89263495a9e403575bd"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/smpl/SMPL_MALE.pkl",
+      "bytes": 39056454,
+      "sha256": "a583c1b98e4afc19042641f1bae5cd8a1f712a6724886291a7627ec07acd408d"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/smpl/SMPL_NEUTRAL.pkl",
+      "bytes": 39001280,
+      "sha256": "98e65c74ad9b998783132f00880d1025a8d64b158e040e6ef13a557e5098bc42"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/smpl_mean_params.npz",
+      "bytes": 1310,
+      "sha256": "6fd6dd687800da946d0a0492383f973b92ec20f166a0b829775882868c35fcdd"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/smplx/MANO_SMPLX_vertex_ids.pkl",
+      "bytes": 13535,
+      "sha256": "e5abe70b6574de25470475091e8008314a5b90127eb48c3e63bfa0adf8c04dcf"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/smplx/SMPL-X__FLAME_vertex_ids.npy",
+      "bytes": 40312,
+      "sha256": "7e70cdc3659aae699b9732e8dd4af49106310c69b90dc83d9f73e96dbf871e49"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/smplx/SMPLX_FEMALE.npz",
+      "bytes": 108794146,
+      "sha256": "b2a3686c9d6d218ff6822fba411c607a3c8125a70af340f384ce68bebecabe0e"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/smplx/SMPLX_MALE.npz",
+      "bytes": 108753445,
+      "sha256": "ab318e3f37d2bfaae26abf4e6fab445c2a610e1d63714794d60379cc263bc2a5"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/smplx/SMPLX_NEUTRAL.npz",
+      "bytes": 108752058,
+      "sha256": "376021446ddc86e99acacd795182bbef903e61d33b76b9d8b359c2b0865bd992"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/smplx/SMPLX_to_J14.pkl",
+      "bytes": 4692193,
+      "sha256": "5df844ddea85b0a400a2e8dbe63d09d19f2b1b7ec0e0e952daeae08f83d82d61"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/smplx/smplx_flip_correspondences.npz",
+      "bytes": 58769,
+      "sha256": "0d3b9d42b3388457aa397d4580d207e0fc7e40da94b0d4b15f6a894fa808dedf"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/smplx/smplx_npz.zip",
+      "bytes": 90885221,
+      "sha256": "0f41f873b4275cad590b32cec4f9b69a576ddb65e4aefc567458726a0eedeb87"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/smplx/smplx_uv/LICENSE",
+      "bytes": 463,
+      "sha256": null
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/smplx/smplx_uv/smplx_uv.obj",
+      "bytes": 1221122,
+      "sha256": null
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/smplx/smplx_uv/smplx_uv.png",
+      "bytes": 287801,
+      "sha256": "f78cceddd979101a7e6981580d0838aed40b7807d7816741170e2edbc0994140"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "human_model_files/smplx/version.txt",
+      "bytes": 33,
+      "sha256": null
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "voxel_grid/cano_1_volume.npz",
+      "bytes": 931137112,
+      "sha256": "c392f6a5c8c9ebde25365f2fb8cb8a66ae90e6330eb761ea7f59450cb6ac7bff"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-Prior",
+      "path": "voxel_grid/human_prior_constrain.npz",
+      "bytes": 84064,
+      "sha256": "52a9d4c2a107012a12491f07f1b5d0874c024d35cedef49def992c63927f41ea"
+    },
+    {
+      "repository": "3DAIGC/LHMPP-700M",
+      "path": "config.json",
+      "bytes": 2848,
+      "sha256": null
+    },
+    {
+      "repository": "3DAIGC/LHMPP-700M",
+      "path": "configuration.json",
+      "bytes": 44,
+      "sha256": null
+    },
+    {
+      "repository": "3DAIGC/LHMPP-700M",
+      "path": "model.safetensors",
+      "bytes": 4527981124,
+      "sha256": "1897beb3c1ab8f0e198892f9813870aa82d2ada7ec4d043bb8cb293e1d65b725"
+    }
+  ]
+}

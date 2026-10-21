@@ -1,0 +1,254 @@
+diff --git a/core/models/encoders/sonata/model.py b/core/models/encoders/sonata/model.py
+index a0cda05..ac380cc 100755
+--- a/core/models/encoders/sonata/model.py
++++ b/core/models/encoders/sonata/model.py
+@@ -241,14 +241,11 @@ class SerializedAttention(PointModule):
+             if self.upcast_attention:
+                 q = q.float()
+                 k = k.float()
+-            attn = (q * self.scale) @ k.transpose(-2, -1)  # (N', H, K, K)
+-            if self.enable_rpe:
+-                attn = attn + self.rpe(self.get_rel_pos(point, order))
+-            if self.upcast_softmax:
+-                attn = attn.float()
+-            attn = self.softmax(attn)
+-            attn = self.attn_drop(attn).to(qkv.dtype)
+-            feat = (attn @ v).transpose(1, 2).reshape(-1, C)
++            assert not self.enable_rpe, "SDPA path requires no relative position embedding"
++            feat = torch.nn.functional.scaled_dot_product_attention(
++                q.half(), k.half(), v.half(), dropout_p=self.attn_drop.p if self.training else 0.0,
++                scale=self.scale
++            ).to(qkv.dtype).transpose(1, 2).reshape(-1, C)
+         else:
+             feat = flash_attn.flash_attn_varlen_qkvpacked_func(
+                 qkv.half().reshape(-1, 3, H, C // H),
+diff --git a/core/models/rendering/base_gs_render.py b/core/models/rendering/base_gs_render.py
+index ad2287b..4146839 100644
+--- a/core/models/rendering/base_gs_render.py
++++ b/core/models/rendering/base_gs_render.py
+@@ -414,6 +414,10 @@ class BaseGSRender(nn.Module):
+             posed_points["mesh_meta"],
+         )
+ 
++        if not getattr(self, "_video2mr_diag_done", False):
++            self._video2mr_diag_done = True
++            xyz = posed_points["posed_coords"][0]
++            print("XYZ_DIAG", xyz.amin(0).tolist(), xyz.amax(0).tolist(), xyz.mean(0).tolist(),flush=True)
+         return self._create_gaussian_models(
+             posed_points["posed_coords"],
+             gs_attr,
+@@ -487,6 +491,18 @@ class BaseGSRender(nn.Module):
+                 mesh_meta=mesh_meta,
+             )
+ 
++            import os
++            if os.environ.get("VIDEO2MR_EXPORT_POSED"):
++                from pathlib import Path
++                export_index = getattr(self, "_video2mr_export_index", 0)
++                if export_index % 15 == 0:
++                    import numpy as np
++                    out = Path(os.environ["VIDEO2MR_EXPORT_POSED"]); out.mkdir(exist_ok=True)
++                    np.savez(out / ("frame-%05d.npz" % export_index),
++                        xyz=anim_models[0].xyz.detach().cpu().numpy(),
++                        intrinsic=intrinsic[b,0].detach().cpu().numpy(),
++                        height=height,width=width)
++                self._video2mr_export_index = export_index + 1
+             gs_list.extend(cano_models)
+ 
+             features = (
+diff --git a/core/models/rendering/gsplat_renderer.py b/core/models/rendering/gsplat_renderer.py
+index c0fa7bd..73dbc40 100755
+--- a/core/models/rendering/gsplat_renderer.py
++++ b/core/models/rendering/gsplat_renderer.py
+@@ -334,6 +334,18 @@ class GSPlatFeatRenderer(GSPlatRenderer):
+                 debug=debug,
+                 mesh_meta=mesh_meta,
+             )
++            import os
++            if os.environ.get("VIDEO2MR_EXPORT_POSED"):
++                from pathlib import Path
++                export_index = getattr(self, "_video2mr_export_index", 0)
++                if export_index % int(os.environ.get('VIDEO2MR_EXPORT_STRIDE','15')) == 0:
++                    import numpy as np
++                    out = Path(os.environ["VIDEO2MR_EXPORT_POSED"]); out.mkdir(exist_ok=True)
++                    np.savez(out / ("frame-%05d.npz" % export_index),
++                        xyz=anim_models[0].xyz.detach().cpu().numpy(),
++                        intrinsic=intrinsic[b,0].detach().cpu().numpy(),
++                        height=height,width=width)
++                self._video2mr_export_index = export_index + 1
+             gs_list.extend(cano_models)
+             features = (
+                 kwargs["features"][b] if kwargs.get("features") is not None else None
+diff --git a/core/utils/model_download_utils.py b/core/utils/model_download_utils.py
+index 0cee9f2..5be6d47 100644
+--- a/core/utils/model_download_utils.py
++++ b/core/utils/model_download_utils.py
+@@ -593,3 +593,13 @@ if __name__ == "__main__":
+             print(f"     Does path exist? {os.path.exists(model_path_test)}")
+         except Exception as e:
+             print(f"Error: {e}")
++
++# Task-local public-file downloader preserves LFS hashes, avoids unrelated prior weights.
++_original_task_query = AutoModelQuery.query
++def _video2mr_task_query(self, model_name, *args, **kwargs):
++    from pathlib import Path
++    root = Path(__file__).resolve().parents[2] / "pretrained_models"
++    if model_name == "LHMPP-700M" and (root / "video2mr-models-ready.json").exists():
++        return str(root / "lhmpp-700m")
++    return _original_task_query(self, model_name, *args, **kwargs)
++AutoModelQuery.query = _video2mr_task_query
+diff --git a/scripts/download_pretrained_models.py b/scripts/download_pretrained_models.py
+index 4c6c651..ded90da 100644
+--- a/scripts/download_pretrained_models.py
++++ b/scripts/download_pretrained_models.py
+@@ -1,83 +1,9 @@
+-#!/usr/bin/env python3
+-# -*- coding: utf-8 -*-
+-"""
+-Download prior models and LHM++ pretrained model weights to ./pretrained_models.
+-Skips items that already exist locally. Tries HuggingFace first, falls back to ModelScope.
+-"""
+-
+-import argparse
+-import os
+-import sys
+-
+-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+-sys.path.insert(0, ROOT)
+-
+-from core.utils.model_card import (
+-    HuggingFace_MODEL_CARD,
+-    HuggingFace_Prior_MODEL_CARD,
+-    ModelScope_MODEL_CARD,
+-    ModelScope_Prior_MODEL_CARD,
+-)
+-from core.utils.model_download_utils import AutoModelQuery
+-
+-
+-def main():
+-    parser = argparse.ArgumentParser(
+-        description="Download LHM++ prior models and pretrained model weights."
+-    )
+-    parser.add_argument(
+-        "--prior",
+-        action="store_true",
+-        help="Download prior models only (e.g. LHMPP-Prior: human_model_files, voxel_grid, etc.)",
+-    )
+-    parser.add_argument(
+-        "--models",
+-        action="store_true",
+-        help="Download LHM++ pretrained model weights only (e.g. LHMPP-700M, LHMPP-700MC, LHMPPS-700M)",
+-    )
+-    parser.add_argument(
+-        "--all",
+-        action="store_true",
+-        help="Download both prior models and pretrained weights (default)",
+-    )
+-    parser.add_argument(
+-        "--save-dir",
+-        type=str,
+-        default="./pretrained_models",
+-        help="Directory to save downloaded models (default: ./pretrained_models)",
+-    )
+-    args = parser.parse_args()
+-
+-    if not args.prior and not args.models and not args.all:
+-        args.all = True
+-
+-    save_dir = args.save_dir
+-    if not os.path.isabs(save_dir):
+-        save_dir = os.path.join(ROOT, save_dir)
+-    save_dir = os.path.normpath(save_dir)
+-    print(f"Save dir: {save_dir}")
+-
+-    automodel = AutoModelQuery(save_dir=save_dir)
+-
+-    if args.prior or args.all:
+-        prior_names = set(HuggingFace_Prior_MODEL_CARD) | set(ModelScope_Prior_MODEL_CARD)
+-        print(f"\n--- Downloading prior models: {prior_names} ---")
+-        result = automodel.download_all_prior_models()
+-        for name, path in result.items():
+-            print(f"  {name}: {path}")
+-
+-    if args.models or args.all:
+-        main_names = set(HuggingFace_MODEL_CARD) | set(ModelScope_MODEL_CARD)
+-        print(f"\n--- Downloading pretrained models: {main_names} ---")
+-        for name in main_names:
+-            try:
+-                path = automodel.query(name)
+-                print(f"  {name}: {path}")
+-            except Exception as e:
+-                print(f"  {name}: FAILED - {e}")
+-
+-    print("\nDone.")
+-
+-
+-if __name__ == "__main__":
+-    main()
++from pathlib import Path
++import time
++root=Path(__file__).resolve().parents[1]
++marker=root/'pretrained_models/video2mr-models-ready.json'
++for i in range(1800):
++ if marker.exists():break
++ time.sleep(1)
++else:raise RuntimeError('Curated prior download not complete')
++print('Task-selected original prior and checkpoint verified; unrelated GagaTracker/BiRefNet/FLAMEtexture/voxel192 omitted')
+diff --git a/scripts/inference/app_inference.py b/scripts/inference/app_inference.py
+index 52d2a4b..48f834a 100644
+--- a/scripts/inference/app_inference.py
++++ b/scripts/inference/app_inference.py
+@@ -135,6 +135,13 @@ def inference_results(
+     smplx_params_dev = {k: v.to(device) for k, v in smplx_params.items()}
+     use_pred_render = getattr(model, "use_pred_shape_for_render", False)
+ 
++    print("CAMERA_DIAG",motion_seq["render_intrs"][0,0].tolist(),smplx_params_dev["trans"][0,0].tolist(),flush=True)
++    if os.environ.get("VIDEO2MR_EXPORT_POSED"):
++        from pathlib import Path
++        import json
++        out = Path(os.environ["VIDEO2MR_EXPORT_POSED"]); out.mkdir(exist_ok=True)
++        (out / "projection.json").write_text(json.dumps({"offsets":motion_seq["offset_list"],"ori_size":motion_seq["ori_size"]}))
++
+     model_outputs = model.infer_single_view(
+         ref_img_tensors.unsqueeze(0).to(device),
+         None,
+@@ -193,6 +200,18 @@ def inference_results(
+         "transform_mat_neutral_pose": transform_mat_neutral_pose,
+     }
+ 
++    # Experimental raw-Gaussian export for visual inspection. This older model
++    # relies on a neural refinement head; do NOT equate raw PLY fidelity with RGB output.
++    if os.environ.get("VIDEO2MR_RAW_GS_PATH"):
++        export_params = dict(smplx_params_dev)
++        export_params["transform_mat_neutral_pose"] = transform_mat_neutral_pose
++        raw_gs = model.inference_gs(gs_model_list, query_points, export_params,
++            motion_seq["render_c2ws"].to(device), motion_seq["render_intrs"].to(device),
++            motion_seq["render_bg_colors"].to(device), gs_hidden_features)
++        raw_gs.save_ply(os.environ["VIDEO2MR_RAW_GS_PATH"])
++        print("EXPERIMENTAL_RAW_GS_EXPORTED", raw_gs.xyz.shape, flush=True)
++        del raw_gs
++
+     frame_varying_keys = [
+         "root_pose",
+         "body_pose",
+diff --git a/scripts/test/test_app_case.py b/scripts/test/test_app_case.py
+index 0c923d9..06cea0d 100644
+--- a/scripts/test/test_app_case.py
++++ b/scripts/test/test_app_case.py
+@@ -141,7 +141,7 @@ def main() -> None:
+ 
+     # Build model_cards (same as app.py): AutoModelQuery or --model_path override
+     prior_model_check(save_dir="./pretrained_models")
+-    motion_video_check(save_dir=".")
++    # Motion is task-owned original FBX retarget; do not download unrelated motion library.
+     model_config = MODEL_CONFIG[args.model_name]
+     if args.model_path:
+         model_path = args.model_path
+@@ -246,6 +246,7 @@ def main() -> None:
+         video_size=video_size,
+         visualized_center=args.visualized_center,
+         device=device,
++        batch_size=1,
+     )
+ 
+     # Get FPS (same as app.py: prefer samurai_visualize.mp4 in motion dir)

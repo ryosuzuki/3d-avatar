@@ -1,0 +1,15 @@
+# Additional export/preprocessing dependencies in the verified existing runtime.
+# Not a replacement for upstream LHM++'s CUDA/compiler/model setup.
+torch==2.3.0+cu121
+torchvision==0.18.0+cu121
+rembg==2.0.63
+onnxruntime==1.23.2
+scipy==1.13.1
+scikit-image==0.24.0
+trimesh==4.4.9
+imageio==2.34.1
+imageio-ffmpeg==0.6.0
+Pillow==10.4.0
+
+# UV parameterization used by the textured Mixamo export.
+xatlas==0.0.9

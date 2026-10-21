@@ -1,0 +1,725 @@
+{
+  "source": "https://github.com/ryosuzuki/classroom-avatar-lab",
+  "sourceCommit": "6b63431600a48a46094b79acd90ea5ebc0b3a264",
+  "upstreamLhmppCommit": "906b5d9fb967ab42efb92f6fa55bf22cac86b653",
+  "note": "Source-only teaching derivative. server.mjs includes the explicitly authorized temporary-public expiry switch from the live working tree. Portable configuration changes are documented in RUN.md; models and private results are excluded.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sourceSha256": "6261af0056c2a7840af5b55d26f70236ee906041cca6b05f20695ed4037c4b21",
+      "archivedSha256": "af950b67b62a8c9dd539c8dc49ce2d3c56bc3237dc4cccc5fab960965b60be4e"
+    },
+    {
+      "path": "GUIDE.md",
+      "sourceSha256": "e5286e73e4f5d324ebd9bf03309937d5e6237e1f6052a86a1ef4046567218937",
+      "archivedSha256": "e5286e73e4f5d324ebd9bf03309937d5e6237e1f6052a86a1ef4046567218937"
+    },
+    {
+      "path": "build-guide.mjs",
+      "sourceSha256": "b65d82df1a5b5618f31437d27c689cd025c36c584c1927d1fc1005350ad33e02",
+      "archivedSha256": "b65d82df1a5b5618f31437d27c689cd025c36c584c1927d1fc1005350ad33e02"
+    },
+    {
+      "path": "character-starter/Assets/Editor/CharacterQuickStart.cs",
+      "sourceSha256": "42f0a1a4ca8e8335ba0459ac75986c58f8b003863e429ea483b87a7b29978fd8",
+      "archivedSha256": "42f0a1a4ca8e8335ba0459ac75986c58f8b003863e429ea483b87a7b29978fd8"
+    },
+    {
+      "path": "character-starter/Packages/manifest.json",
+      "sourceSha256": "675d5b1faace96c8e9ac71a0e3eb027e04c46d7c03ae7c2a8a5977e2a44587b5",
+      "archivedSha256": "675d5b1faace96c8e9ac71a0e3eb027e04c46d7c03ae7c2a8a5977e2a44587b5"
+    },
+    {
+      "path": "character-starter/ProjectSettings/ProjectVersion.txt",
+      "sourceSha256": "2e075b429b4e41e5e49925911f690e4087dbc124718b26c74d93f979cc8fc67e",
+      "archivedSha256": "2e075b429b4e41e5e49925911f690e4087dbc124718b26c74d93f979cc8fc67e"
+    },
+    {
+      "path": "character-starter/README.md",
+      "sourceSha256": "c90f4559c6b86e820d392cb335bcf816e81e503bda7504f363d8edbd52c02546",
+      "archivedSha256": "c90f4559c6b86e820d392cb335bcf816e81e503bda7504f363d8edbd52c02546"
+    },
+    {
+      "path": "characters.html",
+      "sourceSha256": "b822725399dcf6c10cac46aac6e1e8e58503314256ba2175501bd520c8e4947c",
+      "archivedSha256": "b822725399dcf6c10cac46aac6e1e8e58503314256ba2175501bd520c8e4947c"
+    },
+    {
+      "path": "downloads.html",
+      "sourceSha256": "8af11606b9a26d6a53943ac3e6e387dbe9af2f8a000b5fe95d92ce84cb7dd8e8",
+      "archivedSha256": "8af11606b9a26d6a53943ac3e6e387dbe9af2f8a000b5fe95d92ce84cb7dd8e8"
+    },
+    {
+      "path": "downloads.js",
+      "sourceSha256": "859726927382366a0b0dff5ccdf54b0e06097ade66a8bd7c0139f3105071052f",
+      "archivedSha256": "859726927382366a0b0dff5ccdf54b0e06097ade66a8bd7c0139f3105071052f"
+    },
+    {
+      "path": "export_assets.py",
+      "sourceSha256": "601da1f2e6e00191e108edebd980f597c1f872ca3dea7fdfd7cd20129f9ff0b6",
+      "archivedSha256": "601da1f2e6e00191e108edebd980f597c1f872ca3dea7fdfd7cd20129f9ff0b6"
+    },
+    {
+      "path": "guide.html",
+      "sourceSha256": "412ee17dcf36af5381ab24979faf8735b80011bf5619681b72f0b9891f49259b",
+      "archivedSha256": "412ee17dcf36af5381ab24979faf8735b80011bf5619681b72f0b9891f49259b"
+    },
+    {
+      "path": "index.html",
+      "sourceSha256": "b226939adf5a2e38607905c0b76eeaf4b8e47871dba1fa65fdf830a539925f47",
+      "archivedSha256": "b226939adf5a2e38607905c0b76eeaf4b8e47871dba1fa65fdf830a539925f47"
+    },
+    {
+      "path": "package-lock.json",
+      "sourceSha256": "05d080d23b07531f29a8b187905d1b4e3370ef66ef71079e7266123c521b3b87",
+      "archivedSha256": "05d080d23b07531f29a8b187905d1b4e3370ef66ef71079e7266123c521b3b87"
+    },
+    {
+      "path": "package.json",
+      "sourceSha256": "a057d92f8231d5203a151a43d44372e74045e9389a49af266790410f50ae055f",
+      "archivedSha256": "ce3293821ef587686358397c2d8bcf3d9b314e4635749ddef9533cd3119ce47e"
+    },
+    {
+      "path": "pose_compat.py",
+      "sourceSha256": "c4b590e276c07b2f29df57e22af270137108411488a0e59e4a03b449e92cd21c",
+      "archivedSha256": "c4b590e276c07b2f29df57e22af270137108411488a0e59e4a03b449e92cd21c"
+    },
+    {
+      "path": "repair_mixamo.py",
+      "sourceSha256": "d488dd239e05183aa74ff134a569ff064b02ba27378ece7aab319793f8bbfadf",
+      "archivedSha256": "d488dd239e05183aa74ff134a569ff064b02ba27378ece7aab319793f8bbfadf"
+    },
+    {
+      "path": "requirements-worker.txt",
+      "sourceSha256": "94578e15a448d929fe7df6108ca45adbad523bcc7ebb513be49dfebbb8908a70",
+      "archivedSha256": "94578e15a448d929fe7df6108ca45adbad523bcc7ebb513be49dfebbb8908a70"
+    },
+    {
+      "path": "server.mjs",
+      "sourceSha256": "48845b260e573d4a035a42244788e9caf7cb180f7fd63c3639338c120b10f126",
+      "archivedSha256": "bbb7fed6fb637f40711cccfc182858a4d625ae5ab0dc06930ee038b22e2355ba"
+    },
+    {
+      "path": "style.css",
+      "sourceSha256": "7c390b254b3c55e711d662903511932a1fb1a371d4751a4476892827f2f13cd6",
+      "archivedSha256": "7c390b254b3c55e711d662903511932a1fb1a371d4751a4476892827f2f13cd6"
+    },
+    {
+      "path": "test-server.mjs",
+      "sourceSha256": "1e2f7ecef3cc05b36ff72c052b18202096926c45e65fbce4bb30268aa0495080",
+      "archivedSha256": "024142115cc0043f34e063647449aaa7ed6a613595af2cdbbd62bd693a7e5bdf"
+    },
+    {
+      "path": "test_mixamo.py",
+      "sourceSha256": "f0c4b6d14e81a4b8068364ee9ca57e5fac42144aa39dd7398b68d6043ca65996",
+      "archivedSha256": "f0c4b6d14e81a4b8068364ee9ca57e5fac42144aa39dd7398b68d6043ca65996"
+    },
+    {
+      "path": "test_pose_compat.py",
+      "sourceSha256": "7a2290dd290191b61773bf03bd6671ee5c02bcaa1a3c21f51afb919c9c2c867f",
+      "archivedSha256": "7a2290dd290191b61773bf03bd6671ee5c02bcaa1a3c21f51afb919c9c2c867f"
+    },
+    {
+      "path": "tutorial.html",
+      "sourceSha256": "999e933cada5d764a5a14b611ba388a3521c504cc10fe85f66a49346c151eaba",
+      "archivedSha256": "999e933cada5d764a5a14b611ba388a3521c504cc10fe85f66a49346c151eaba"
+    },
+    {
+      "path": "ui.mjs",
+      "sourceSha256": "83801b146de32698edcb7af0519f9028d19f5bcb21afea29b29ee6b1047b961d",
+      "archivedSha256": "83801b146de32698edcb7af0519f9028d19f5bcb21afea29b29ee6b1047b961d"
+    },
+    {
+      "path": "unity-starter/Assets/Editor/ClassroomSetup.cs",
+      "sourceSha256": "3cbb3384a6aab2fc18de7dbe58eb36af62260509fc950153da0fc20f10c036f6",
+      "archivedSha256": "3cbb3384a6aab2fc18de7dbe58eb36af62260509fc950153da0fc20f10c036f6"
+    },
+    {
+      "path": "unity-starter/Packages/manifest.json",
+      "sourceSha256": "fc25e68b919de17266ad1cc606b43c4f1d134032444f78877f1e8ae7371aaf57",
+      "archivedSha256": "fc25e68b919de17266ad1cc606b43c4f1d134032444f78877f1e8ae7371aaf57"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor.meta",
+      "sourceSha256": "ade498e8cc82901f19f5a94216ab693873bea1607b44fc63b756573dd7f39aa2",
+      "archivedSha256": "ade498e8cc82901f19f5a94216ab693873bea1607b44fc63b756573dd7f39aa2"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianMoveTool.cs",
+      "sourceSha256": "073f884c28796ce976a0f9ff095aa6407427e145d48bf2e9ef9e8fac09ebf812",
+      "archivedSha256": "073f884c28796ce976a0f9ff095aa6407427e145d48bf2e9ef9e8fac09ebf812"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianMoveTool.cs.meta",
+      "sourceSha256": "800848c97718198e2f183507c24e4bb12fd74f8b8fee968fa236791f0dfd9215",
+      "archivedSha256": "800848c97718198e2f183507c24e4bb12fd74f8b8fee968fa236791f0dfd9215"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianRotateTool.cs",
+      "sourceSha256": "292baa46c03c0e20a3b286da33fcf5cf2be68cd2a00c12a81583a0396025f914",
+      "archivedSha256": "292baa46c03c0e20a3b286da33fcf5cf2be68cd2a00c12a81583a0396025f914"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianRotateTool.cs.meta",
+      "sourceSha256": "adb3ee92ff796c5a2569a2fda7317a367dcecc137d6cf7757b57e95122add861",
+      "archivedSha256": "adb3ee92ff796c5a2569a2fda7317a367dcecc137d6cf7757b57e95122add861"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianScaleTool.cs",
+      "sourceSha256": "e8df6700669fecda2d65be9b7956a707b52de2aec50215d6b3493c66802d7781",
+      "archivedSha256": "e8df6700669fecda2d65be9b7956a707b52de2aec50215d6b3493c66802d7781"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianScaleTool.cs.meta",
+      "sourceSha256": "1f8de06cc1d67df4c9c4d8b162cdca7d03be65e144e02e4347ceb9d6e9097437",
+      "archivedSha256": "1f8de06cc1d67df4c9c4d8b162cdca7d03be65e144e02e4347ceb9d6e9097437"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianSplatAssetCreator.cs",
+      "sourceSha256": "cadd38f3ce29c09b9711331616ccdede5d8663d49c169a2df31e2ba9af51f37e",
+      "archivedSha256": "cadd38f3ce29c09b9711331616ccdede5d8663d49c169a2df31e2ba9af51f37e"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianSplatAssetCreator.cs.meta",
+      "sourceSha256": "f7c894c31f5920c6e5d24fd3bd7d5915210aefd33e4874bba38e354031136186",
+      "archivedSha256": "f7c894c31f5920c6e5d24fd3bd7d5915210aefd33e4874bba38e354031136186"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianSplatAssetEditor.cs",
+      "sourceSha256": "47e9beb5d271f710778535572ac4321eea4d3ab6942035d2dc0c586f81f8356d",
+      "archivedSha256": "47e9beb5d271f710778535572ac4321eea4d3ab6942035d2dc0c586f81f8356d"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianSplatAssetEditor.cs.meta",
+      "sourceSha256": "cbd43660982dadb4563680924777deb099ec1254844bff2bc7b091ce700be8aa",
+      "archivedSha256": "cbd43660982dadb4563680924777deb099ec1254844bff2bc7b091ce700be8aa"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianSplatRendererEditor.cs",
+      "sourceSha256": "45c340540e876a4464b75dc670af7528be171a63f76c79be33e6a31c3a46d30f",
+      "archivedSha256": "45c340540e876a4464b75dc670af7528be171a63f76c79be33e6a31c3a46d30f"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianSplatRendererEditor.cs.meta",
+      "sourceSha256": "7aefa54caff1698fb15eb7f794632d969b8fa1ee901ddff147492759290e3162",
+      "archivedSha256": "7aefa54caff1698fb15eb7f794632d969b8fa1ee901ddff147492759290e3162"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianSplatValidator.cs",
+      "sourceSha256": "49e6556375db83ba41b317c28364db286e826fcb36846b5c10d8433164ecee8b",
+      "archivedSha256": "49e6556375db83ba41b317c28364db286e826fcb36846b5c10d8433164ecee8b"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianSplatValidator.cs.meta",
+      "sourceSha256": "0a0f9445297781993615102b17afbb8e2ef7c3c91ff7dc64d646dbce09719254",
+      "archivedSha256": "0a0f9445297781993615102b17afbb8e2ef7c3c91ff7dc64d646dbce09719254"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianSplattingEditor.asmdef",
+      "sourceSha256": "88b77ee28c65c10712f6d0e03c0b109a0e0c500bf851c479499135385f80ffab",
+      "archivedSha256": "88b77ee28c65c10712f6d0e03c0b109a0e0c500bf851c479499135385f80ffab"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianSplattingEditor.asmdef.meta",
+      "sourceSha256": "6eda4fb34bcecac4e43db32cdf7240170705edc629d258b490e18a5340c78160",
+      "archivedSha256": "6eda4fb34bcecac4e43db32cdf7240170705edc629d258b490e18a5340c78160"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianTool.cs",
+      "sourceSha256": "e05c32ec1ee5f93ab25ed988e7dc536dc6cf52c92c4bf365f6a0ab4171678301",
+      "archivedSha256": "e05c32ec1ee5f93ab25ed988e7dc536dc6cf52c92c4bf365f6a0ab4171678301"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianTool.cs.meta",
+      "sourceSha256": "349ed6d7841f6ea9b7cf915387ee6ab4824e4cfb8a6880cec99ac7efe8d056c9",
+      "archivedSha256": "349ed6d7841f6ea9b7cf915387ee6ab4824e4cfb8a6880cec99ac7efe8d056c9"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianToolContext.cs",
+      "sourceSha256": "443fde1673a518833caa7afae6a4316996832a768f7806d104b2213a1ba2ff31",
+      "archivedSha256": "443fde1673a518833caa7afae6a4316996832a768f7806d104b2213a1ba2ff31"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/GaussianToolContext.cs.meta",
+      "sourceSha256": "a4ae47997656be26b9b7bfc041a7d51a807a85aa002b93756bd044fa7f4140d5",
+      "archivedSha256": "a4ae47997656be26b9b7bfc041a7d51a807a85aa002b93756bd044fa7f4140d5"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Icons.meta",
+      "sourceSha256": "0d28c9c2ab07789161b0769604fcaded7202066bacd0a885840a0102712f584c",
+      "archivedSha256": "0d28c9c2ab07789161b0769604fcaded7202066bacd0a885840a0102712f584c"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Icons/GaussianContext.png",
+      "sourceSha256": "afebf8cc50496a41e756cdf972cd11db02250cd1d875c52361c490fc7120e89e",
+      "archivedSha256": "afebf8cc50496a41e756cdf972cd11db02250cd1d875c52361c490fc7120e89e"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Icons/GaussianContext.png.meta",
+      "sourceSha256": "1b7cd7c0c57c050384290462186e3bec9be941af41f911afd37a51915d9c9012",
+      "archivedSha256": "1b7cd7c0c57c050384290462186e3bec9be941af41f911afd37a51915d9c9012"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Icons/GaussianContext@2x.png",
+      "sourceSha256": "02d3e9d824372944ebb6d4aa5e7f975e101803f9a4abe96e13c80eb72d55587b",
+      "archivedSha256": "02d3e9d824372944ebb6d4aa5e7f975e101803f9a4abe96e13c80eb72d55587b"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Icons/GaussianContext@2x.png.meta",
+      "sourceSha256": "44b0afe672d690636d1b554afe7ac6780e303072d99ce94b7b98b4685cc14b65",
+      "archivedSha256": "44b0afe672d690636d1b554afe7ac6780e303072d99ce94b7b98b4685cc14b65"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Icons/d_GaussianContext.png",
+      "sourceSha256": "f92dc8d0f48e219da0393a756b042e78117b6cba528825f5e72e2c0144f72fc4",
+      "archivedSha256": "f92dc8d0f48e219da0393a756b042e78117b6cba528825f5e72e2c0144f72fc4"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Icons/d_GaussianContext.png.meta",
+      "sourceSha256": "c5d869e8eb34683db5e976289c014f661df7c7325fd4cfa89506ae1816bbb7ab",
+      "archivedSha256": "c5d869e8eb34683db5e976289c014f661df7c7325fd4cfa89506ae1816bbb7ab"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Icons/d_GaussianContext@2x.png",
+      "sourceSha256": "28a4c83314de2642b35ced0096ca6afba9e049e29079102a6dc536c3eb98e333",
+      "archivedSha256": "28a4c83314de2642b35ced0096ca6afba9e049e29079102a6dc536c3eb98e333"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Icons/d_GaussianContext@2x.png.meta",
+      "sourceSha256": "de00a73b6ad80647a65cd96c6195c6a41c0a807f1ad07fd062e70a37fcd345ca",
+      "archivedSha256": "de00a73b6ad80647a65cd96c6195c6a41c0a807f1ad07fd062e70a37fcd345ca"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Utils.meta",
+      "sourceSha256": "e2dc538534cefc445d8248d99eab44bfe401392238f44118a9bda0ae75967c24",
+      "archivedSha256": "e2dc538534cefc445d8248d99eab44bfe401392238f44118a9bda0ae75967c24"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Utils/CaptureScreenshot.cs",
+      "sourceSha256": "e0388558c7d5b8990b8ead82120845c17fbce785f5550ac2c208f39b0c5b5e37",
+      "archivedSha256": "e0388558c7d5b8990b8ead82120845c17fbce785f5550ac2c208f39b0c5b5e37"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Utils/CaptureScreenshot.cs.meta",
+      "sourceSha256": "dff74cd466290f369b609f00356e3bc1d9c057c4d665853b32d0309802876993",
+      "archivedSha256": "dff74cd466290f369b609f00356e3bc1d9c057c4d665853b32d0309802876993"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Utils/FilePickerControl.cs",
+      "sourceSha256": "2694fefb9e767f83eb2376433398f704e7778ce66de8e24552636231892fd044",
+      "archivedSha256": "2694fefb9e767f83eb2376433398f704e7778ce66de8e24552636231892fd044"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Utils/FilePickerControl.cs.meta",
+      "sourceSha256": "5fc82e82baaf5592539dfa3803f051dc72779a045af80488477fcbb0382c037f",
+      "archivedSha256": "5fc82e82baaf5592539dfa3803f051dc72779a045af80488477fcbb0382c037f"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Utils/GaussianFileReader.cs",
+      "sourceSha256": "12278b3983349c7f3f4385b5c98b0c019a1f3b29fef9e6ddea0d4d54cd3d4f83",
+      "archivedSha256": "12278b3983349c7f3f4385b5c98b0c019a1f3b29fef9e6ddea0d4d54cd3d4f83"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Utils/GaussianFileReader.cs.meta",
+      "sourceSha256": "135d98557c681f8671fbca5d28f3342e62a409855c0d5b601f47e29808ee1c90",
+      "archivedSha256": "135d98557c681f8671fbca5d28f3342e62a409855c0d5b601f47e29808ee1c90"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Utils/KMeansClustering.cs",
+      "sourceSha256": "c298ba521d6f4d7749c3c620c683eb4d0356a08006449196635585cf76b83d8f",
+      "archivedSha256": "c298ba521d6f4d7749c3c620c683eb4d0356a08006449196635585cf76b83d8f"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Utils/KMeansClustering.cs.meta",
+      "sourceSha256": "6b8c27537e42ef5b375108af2a6fcbe05de3f1fa5bff1d6f33bd39606e733d1f",
+      "archivedSha256": "6b8c27537e42ef5b375108af2a6fcbe05de3f1fa5bff1d6f33bd39606e733d1f"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Utils/PLYFileReader.cs",
+      "sourceSha256": "07a42dd2c314c6f5948cabf23eb95dbe3884c4009c647770691af8cb550873b8",
+      "archivedSha256": "07a42dd2c314c6f5948cabf23eb95dbe3884c4009c647770691af8cb550873b8"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Utils/PLYFileReader.cs.meta",
+      "sourceSha256": "c2535520ab753652e4c364f1269d8b854f552f6c871edb465598a6a00bab7937",
+      "archivedSha256": "c2535520ab753652e4c364f1269d8b854f552f6c871edb465598a6a00bab7937"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Utils/SPZFileReader.cs",
+      "sourceSha256": "b3eb9c197694e35fea855deea33c932db57209ab23b4a638dbd27f9211250eb7",
+      "archivedSha256": "b3eb9c197694e35fea855deea33c932db57209ab23b4a638dbd27f9211250eb7"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Utils/SPZFileReader.cs.meta",
+      "sourceSha256": "a8b9750fddef66d61df7bf6f58471658f729b1784ee060fbc285a9f7a1fd5511",
+      "archivedSha256": "a8b9750fddef66d61df7bf6f58471658f729b1784ee060fbc285a9f7a1fd5511"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Utils/TinyJsonParser.cs",
+      "sourceSha256": "4e9a9696ec9537792aa255c965bf08805af66bf09c5ffe7b571ec1ec0204f64c",
+      "archivedSha256": "4e9a9696ec9537792aa255c965bf08805af66bf09c5ffe7b571ec1ec0204f64c"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Editor/Utils/TinyJsonParser.cs.meta",
+      "sourceSha256": "26fcebafa2163a4b4aaaa4a2a52040ff193644320a342254e535fa7d03605083",
+      "archivedSha256": "26fcebafa2163a4b4aaaa4a2a52040ff193644320a342254e535fa7d03605083"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/LICENSE.md",
+      "sourceSha256": "3dcf5e2cf3cdcbeba511294d2c4e2311afb9fbbb722e05b81e946bb4be68d8e3",
+      "archivedSha256": "3dcf5e2cf3cdcbeba511294d2c4e2311afb9fbbb722e05b81e946bb4be68d8e3"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/LICENSE.md.meta",
+      "sourceSha256": "7a084e77a820b082ed7f454f1fb1b85f18cfb6a3628751fa8a59d3a877f9615a",
+      "archivedSha256": "7a084e77a820b082ed7f454f1fb1b85f18cfb6a3628751fa8a59d3a877f9615a"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Materials.meta",
+      "sourceSha256": "c76038847e8dd1a03eeb22980d4122016d704945498e8373eb8387987d99ab55",
+      "archivedSha256": "c76038847e8dd1a03eeb22980d4122016d704945498e8373eb8387987d99ab55"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Materials/BlackSkybox.mat",
+      "sourceSha256": "c201bebea725c9816b9bcbde424c1443a64a66662c194d33e9aa633199c25758",
+      "archivedSha256": "c201bebea725c9816b9bcbde424c1443a64a66662c194d33e9aa633199c25758"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Materials/BlackSkybox.mat.meta",
+      "sourceSha256": "cb44cf21247b72ac63f09f0469d654621c9e405d12b2a89f41baac939c68fdd0",
+      "archivedSha256": "cb44cf21247b72ac63f09f0469d654621c9e405d12b2a89f41baac939c68fdd0"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Runtime.meta",
+      "sourceSha256": "7bea9d327506cee1e7972f5364cc173c6b139fed78096bc349a86370a7d59e3a",
+      "archivedSha256": "7bea9d327506cee1e7972f5364cc173c6b139fed78096bc349a86370a7d59e3a"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Runtime/GaussianCutout.cs",
+      "sourceSha256": "0326fe75904fb32f474f51b54e5588745f803d2894846bf5b5da7361e3135b17",
+      "archivedSha256": "0326fe75904fb32f474f51b54e5588745f803d2894846bf5b5da7361e3135b17"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Runtime/GaussianCutout.cs.meta",
+      "sourceSha256": "119ba94d35f6a518356fc95359dc6f98209fb0a633af614976ae369683ad3587",
+      "archivedSha256": "119ba94d35f6a518356fc95359dc6f98209fb0a633af614976ae369683ad3587"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Runtime/GaussianSplatAsset.cs",
+      "sourceSha256": "4df9dc472397c8aeae468d0dfe685d0bc581b23bf7a4642ef3a08675602e67ec",
+      "archivedSha256": "4df9dc472397c8aeae468d0dfe685d0bc581b23bf7a4642ef3a08675602e67ec"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Runtime/GaussianSplatAsset.cs.meta",
+      "sourceSha256": "ff718362b2d74652d135fc2f05f6aa4f52004dd5034b5b0a20b47a8df4d1cbe4",
+      "archivedSha256": "ff718362b2d74652d135fc2f05f6aa4f52004dd5034b5b0a20b47a8df4d1cbe4"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Runtime/GaussianSplatHDRPPass.cs",
+      "sourceSha256": "d89d6f9ec4cc486eeccdb307c036410df54777f02444710022b4dd327e8fa284",
+      "archivedSha256": "d89d6f9ec4cc486eeccdb307c036410df54777f02444710022b4dd327e8fa284"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Runtime/GaussianSplatHDRPPass.cs.meta",
+      "sourceSha256": "63d5309b06ab667270849855ea3d98f020829baa643c4307c35d17908988cd41",
+      "archivedSha256": "63d5309b06ab667270849855ea3d98f020829baa643c4307c35d17908988cd41"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Runtime/GaussianSplatRenderer.cs",
+      "sourceSha256": "e49b7d4b080d9dc200b1e069826df1ff1c0b7de761230d1658b468eac50543a6",
+      "archivedSha256": "e49b7d4b080d9dc200b1e069826df1ff1c0b7de761230d1658b468eac50543a6"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Runtime/GaussianSplatRenderer.cs.meta",
+      "sourceSha256": "a6aa3d9ddcaaaddc16b77f6d61dbd883ebb03e77aeb230c9d28971ee03fbdb27",
+      "archivedSha256": "a6aa3d9ddcaaaddc16b77f6d61dbd883ebb03e77aeb230c9d28971ee03fbdb27"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Runtime/GaussianSplatURPFeature.cs",
+      "sourceSha256": "12052c5bfd59e2b672b32909868f4a96b96218ea1d2ee15e0643d58b81ef766a",
+      "archivedSha256": "12052c5bfd59e2b672b32909868f4a96b96218ea1d2ee15e0643d58b81ef766a"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Runtime/GaussianSplatURPFeature.cs.meta",
+      "sourceSha256": "49b1c6fc0e87c0191f20495f5062040eb78d195e2d25bdd97cc86a0e229d2cdc",
+      "archivedSha256": "49b1c6fc0e87c0191f20495f5062040eb78d195e2d25bdd97cc86a0e229d2cdc"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Runtime/GaussianSplatting.asmdef",
+      "sourceSha256": "071b738c6ec8d811e223ce6c0d6975af277a520f00b1a0032fb843e3c07dc564",
+      "archivedSha256": "071b738c6ec8d811e223ce6c0d6975af277a520f00b1a0032fb843e3c07dc564"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Runtime/GaussianSplatting.asmdef.meta",
+      "sourceSha256": "c9c49cdd7d655aff59554b0bca54e824f00eccbf01f6617ddbb9e6076fc4cc98",
+      "archivedSha256": "c9c49cdd7d655aff59554b0bca54e824f00eccbf01f6617ddbb9e6076fc4cc98"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Runtime/GaussianUtils.cs",
+      "sourceSha256": "a76e1889cc588e61c7d71e0b302ce0436c7d274a16a7b6edb93dd6a3d48079d4",
+      "archivedSha256": "a76e1889cc588e61c7d71e0b302ce0436c7d274a16a7b6edb93dd6a3d48079d4"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Runtime/GaussianUtils.cs.meta",
+      "sourceSha256": "12eac078b62d21eb9cb71616ab8ab8f8ed97a63b21755c63dd60e82e500a223b",
+      "archivedSha256": "12eac078b62d21eb9cb71616ab8ab8f8ed97a63b21755c63dd60e82e500a223b"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Runtime/GpuSorting.cs",
+      "sourceSha256": "3e44af103b3802065c53257a786ba56127b6511724844d4da36299c4cb4ad137",
+      "archivedSha256": "3e44af103b3802065c53257a786ba56127b6511724844d4da36299c4cb4ad137"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Runtime/GpuSorting.cs.meta",
+      "sourceSha256": "9b4242f0847aae21b40229abad279ff96fee4acc70dabef11de54205d60b1d15",
+      "archivedSha256": "9b4242f0847aae21b40229abad279ff96fee4acc70dabef11de54205d60b1d15"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders.meta",
+      "sourceSha256": "bc97ab303e0ec7908f73e91a5bf774b1ced23a27772aa5b81bd8dc8d90464eb6",
+      "archivedSha256": "bc97ab303e0ec7908f73e91a5bf774b1ced23a27772aa5b81bd8dc8d90464eb6"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/BlackSkybox.shader",
+      "sourceSha256": "2bd58277b2c28420b7efcb90b0b2fc1c75bc0ad917fcf2c66e24b3bd6483094f",
+      "archivedSha256": "2bd58277b2c28420b7efcb90b0b2fc1c75bc0ad917fcf2c66e24b3bd6483094f"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/BlackSkybox.shader.meta",
+      "sourceSha256": "3d943a7290c78584965eabf1216d1ffce7208034aa40b22d0632e174098419b7",
+      "archivedSha256": "3d943a7290c78584965eabf1216d1ffce7208034aa40b22d0632e174098419b7"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/DeviceRadixSort.hlsl",
+      "sourceSha256": "bac964dec08c45fe504ccb591c4134c51a000f331dd42881d049a96496960c65",
+      "archivedSha256": "bac964dec08c45fe504ccb591c4134c51a000f331dd42881d049a96496960c65"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/DeviceRadixSort.hlsl.meta",
+      "sourceSha256": "7bd03a58d4223f8b29d10bb83b0013b96998a6b7446dbe223c28ae59318b6315",
+      "archivedSha256": "7bd03a58d4223f8b29d10bb83b0013b96998a6b7446dbe223c28ae59318b6315"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/GaussianComposite.shader",
+      "sourceSha256": "06c3fff60749daf44c260128b8f8bf316d73d15511f4da5ba9ac58ef2c9a3c9c",
+      "archivedSha256": "06c3fff60749daf44c260128b8f8bf316d73d15511f4da5ba9ac58ef2c9a3c9c"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/GaussianComposite.shader.meta",
+      "sourceSha256": "36c1ee2aafc80f1aa99ba284044db9a8ea2e54b65325d5a1cf52ca65fcac3fe8",
+      "archivedSha256": "36c1ee2aafc80f1aa99ba284044db9a8ea2e54b65325d5a1cf52ca65fcac3fe8"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/GaussianDebugRenderBoxes.shader",
+      "sourceSha256": "d95b5665f512e18add7ed21e5b1e08003769b27c819f50d2e98e138287b1e059",
+      "archivedSha256": "d95b5665f512e18add7ed21e5b1e08003769b27c819f50d2e98e138287b1e059"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/GaussianDebugRenderBoxes.shader.meta",
+      "sourceSha256": "c3bb1e0f3a74fd54a07d31b1c5593831edd662b79d1ed39d642e7c5c1f188ad5",
+      "archivedSha256": "c3bb1e0f3a74fd54a07d31b1c5593831edd662b79d1ed39d642e7c5c1f188ad5"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/GaussianDebugRenderPoints.shader",
+      "sourceSha256": "f40c30c96b819d2521acdb8ae4169d760d1776f680ad296c88bc34f5b9f19ac1",
+      "archivedSha256": "f40c30c96b819d2521acdb8ae4169d760d1776f680ad296c88bc34f5b9f19ac1"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/GaussianDebugRenderPoints.shader.meta",
+      "sourceSha256": "a47cfc8ad9dfcb62e57bae9d7dd473935f0079d590d81c56b6f3b077bd69345e",
+      "archivedSha256": "a47cfc8ad9dfcb62e57bae9d7dd473935f0079d590d81c56b6f3b077bd69345e"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/GaussianSplatting.hlsl",
+      "sourceSha256": "e2b10fd82ee3490774ad2f5508fb934e4469606987d4419de34cf8155b697420",
+      "archivedSha256": "e2b10fd82ee3490774ad2f5508fb934e4469606987d4419de34cf8155b697420"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/GaussianSplatting.hlsl.meta",
+      "sourceSha256": "86e071d17132d58ad8f689edd560b324be3b7dd086f377e27ee0a80a5f8ad157",
+      "archivedSha256": "86e071d17132d58ad8f689edd560b324be3b7dd086f377e27ee0a80a5f8ad157"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/RenderGaussianSplats.shader",
+      "sourceSha256": "c499b70a4af9167f3818e865b6c5abc321f6427d7678e933a339fa6d6ce9bac0",
+      "archivedSha256": "c499b70a4af9167f3818e865b6c5abc321f6427d7678e933a339fa6d6ce9bac0"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/RenderGaussianSplats.shader.meta",
+      "sourceSha256": "4442f3cbea87ce0d3c508f2aaa3ebcb98a20a036b046afbe731e84b8db4ecedb",
+      "archivedSha256": "4442f3cbea87ce0d3c508f2aaa3ebcb98a20a036b046afbe731e84b8db4ecedb"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/SortCommon.hlsl",
+      "sourceSha256": "a9382ba15a6b76b10c73aef82aa9eb587545c8e11476da83ab411bc56bba0276",
+      "archivedSha256": "a9382ba15a6b76b10c73aef82aa9eb587545c8e11476da83ab411bc56bba0276"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/SortCommon.hlsl.meta",
+      "sourceSha256": "46d4f489398e735d2346e6524ef2930797aeb9350b8fb34c35790e5bd2f5c06d",
+      "archivedSha256": "46d4f489398e735d2346e6524ef2930797aeb9350b8fb34c35790e5bd2f5c06d"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/SphericalHarmonics.hlsl",
+      "sourceSha256": "1961d16462f8abd6307230956514304cd6fb5c516e7c6070ac1029d62178931b",
+      "archivedSha256": "1961d16462f8abd6307230956514304cd6fb5c516e7c6070ac1029d62178931b"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/SphericalHarmonics.hlsl.meta",
+      "sourceSha256": "8684af2af34a570b6107d92a5c28399d76620a537e1acdcbb8ee2acfb1e3892b",
+      "archivedSha256": "8684af2af34a570b6107d92a5c28399d76620a537e1acdcbb8ee2acfb1e3892b"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/SplatUtilities.compute",
+      "sourceSha256": "fa1ca31ffde5ee78f5d7b133d1042c9777e2ca74c94d0fb136024e5554b3f954",
+      "archivedSha256": "fa1ca31ffde5ee78f5d7b133d1042c9777e2ca74c94d0fb136024e5554b3f954"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/Shaders/SplatUtilities.compute.meta",
+      "sourceSha256": "33a0f88a3e3ec4d390d8e6c6141bbc4f5d7fb6ac27e5b332f776bb4feffa93e3",
+      "archivedSha256": "33a0f88a3e3ec4d390d8e6c6141bbc4f5d7fb6ac27e5b332f776bb4feffa93e3"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/package.json",
+      "sourceSha256": "4464def7fa547006ade04083fe2ce7e200cacb47dd35d1454c2ece070f2f474e",
+      "archivedSha256": "4464def7fa547006ade04083fe2ce7e200cacb47dd35d1454c2ece070f2f474e"
+    },
+    {
+      "path": "unity-starter/Packages/org.nesnausk.gaussian-splatting/package.json.meta",
+      "sourceSha256": "70305430e1763fdb20a4680c8f2887b37466351e4131142276d87219f0e371e6",
+      "archivedSha256": "70305430e1763fdb20a4680c8f2887b37466351e4131142276d87219f0e371e6"
+    },
+    {
+      "path": "unity-starter/Packages/packages-lock.json",
+      "sourceSha256": "f8b9e717cfd2220a226eb41bc1ad24fa67d529436ede8b0a23471b41cc9650e7",
+      "archivedSha256": "f8b9e717cfd2220a226eb41bc1ad24fa67d529436ede8b0a23471b41cc9650e7"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/AudioManager.asset",
+      "sourceSha256": "9543c41dbfc7d3951217c4dd9481ed026eb8e529b85ecf4463969a0fea747729",
+      "archivedSha256": "9543c41dbfc7d3951217c4dd9481ed026eb8e529b85ecf4463969a0fea747729"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/ClusterInputManager.asset",
+      "sourceSha256": "40e65dd214bf254955d2c8829ca8ce2130fd3510485560ce012e9a1ddd93e623",
+      "archivedSha256": "40e65dd214bf254955d2c8829ca8ce2130fd3510485560ce012e9a1ddd93e623"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/DynamicsManager.asset",
+      "sourceSha256": "fb36e677f7de32325bede8462e7e3eaf0be86ca374216d2907886fce7cb1d488",
+      "archivedSha256": "fb36e677f7de32325bede8462e7e3eaf0be86ca374216d2907886fce7cb1d488"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/EditorBuildSettings.asset",
+      "sourceSha256": "1942c088ddfeeef348fdf12390e2a2d6da51056e197458d67969d44e7b2cbbd3",
+      "archivedSha256": "1942c088ddfeeef348fdf12390e2a2d6da51056e197458d67969d44e7b2cbbd3"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/EditorSettings.asset",
+      "sourceSha256": "89cb14ab05ce8ce1e1413fa559e9d9ccb2633db48685215527d44eba43412aff",
+      "archivedSha256": "89cb14ab05ce8ce1e1413fa559e9d9ccb2633db48685215527d44eba43412aff"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/GraphicsSettings.asset",
+      "sourceSha256": "40de98f4d46d02fb08e268ad3a722a00eed7289f4ef6d2e759984b1b4a85d2af",
+      "archivedSha256": "40de98f4d46d02fb08e268ad3a722a00eed7289f4ef6d2e759984b1b4a85d2af"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/InputManager.asset",
+      "sourceSha256": "d0f454ddb880912abcae92e3e12957a7446786ba89e24937e019ff3bbc0d4300",
+      "archivedSha256": "d0f454ddb880912abcae92e3e12957a7446786ba89e24937e019ff3bbc0d4300"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/MemorySettings.asset",
+      "sourceSha256": "cb2e41edd7f5a64298d68dd4ab768e8908e33a00f26e5ee53638e4d4251c358e",
+      "archivedSha256": "cb2e41edd7f5a64298d68dd4ab768e8908e33a00f26e5ee53638e4d4251c358e"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/MultiplayerManager.asset",
+      "sourceSha256": "ce4075d7a7dd8ac7ffe55de2427692c63f90dae398208bd80cec0f27cbe09f4b",
+      "archivedSha256": "ce4075d7a7dd8ac7ffe55de2427692c63f90dae398208bd80cec0f27cbe09f4b"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/NavMeshAreas.asset",
+      "sourceSha256": "7ebbf8f53b8033104e1878b95ca07a28d0954092d81c220f14196a42f651e658",
+      "archivedSha256": "7ebbf8f53b8033104e1878b95ca07a28d0954092d81c220f14196a42f651e658"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/Physics2DSettings.asset",
+      "sourceSha256": "1cfc0c8fbceec604fd7cd2a06c04ff05dddee6335b75c92b0f5715ad80ba9490",
+      "archivedSha256": "1cfc0c8fbceec604fd7cd2a06c04ff05dddee6335b75c92b0f5715ad80ba9490"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/PresetManager.asset",
+      "sourceSha256": "29c125923fe6e29f90190d4fce1c82d660e7051546e2c9d02908d18c9cf2436c",
+      "archivedSha256": "29c125923fe6e29f90190d4fce1c82d660e7051546e2c9d02908d18c9cf2436c"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/ProjectSettings.asset",
+      "sourceSha256": "5e9058c9193af0c1c8e9a4d83d7eafae991141c049a7166b7af43dc08f07db1f",
+      "archivedSha256": "5e9058c9193af0c1c8e9a4d83d7eafae991141c049a7166b7af43dc08f07db1f"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/ProjectVersion.txt",
+      "sourceSha256": "c88aca53996b7a2c9be5551cb82a59b405b91d5eb9ac511bdb83b16cfb0c4d96",
+      "archivedSha256": "c88aca53996b7a2c9be5551cb82a59b405b91d5eb9ac511bdb83b16cfb0c4d96"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/QualitySettings.asset",
+      "sourceSha256": "f1f893b1be47ad2442f58338dd7c860dc1986bb317e2f5bb31084454ffabbf4c",
+      "archivedSha256": "f1f893b1be47ad2442f58338dd7c860dc1986bb317e2f5bb31084454ffabbf4c"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/SceneTemplateSettings.json",
+      "sourceSha256": "bb9098b3bfcde78d93e264b96f7b77b5430e64e8c57a7aad7f5a5d9c3945e16a",
+      "archivedSha256": "bb9098b3bfcde78d93e264b96f7b77b5430e64e8c57a7aad7f5a5d9c3945e16a"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/TagManager.asset",
+      "sourceSha256": "996628fdc904025b83606bbfbda4fe08c0bbe916475146110e77cdc2f22c2013",
+      "archivedSha256": "996628fdc904025b83606bbfbda4fe08c0bbe916475146110e77cdc2f22c2013"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/TimeManager.asset",
+      "sourceSha256": "3396f52fdc16d445024e01d7a2d99db6f0a37569d1d73c0302e9ffb857d90287",
+      "archivedSha256": "3396f52fdc16d445024e01d7a2d99db6f0a37569d1d73c0302e9ffb857d90287"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/UnityConnectSettings.asset",
+      "sourceSha256": "11251dae0356b6f43dd2c67bb511f6b7ecda4e5de425186bba3297e6f3dc1c6f",
+      "archivedSha256": "11251dae0356b6f43dd2c67bb511f6b7ecda4e5de425186bba3297e6f3dc1c6f"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/VFXManager.asset",
+      "sourceSha256": "2973a6af930e142f62cde00076beda8a3cc3a66d9bfcde7a58ba7d4be2251c26",
+      "archivedSha256": "2973a6af930e142f62cde00076beda8a3cc3a66d9bfcde7a58ba7d4be2251c26"
+    },
+    {
+      "path": "unity-starter/ProjectSettings/VersionControlSettings.asset",
+      "sourceSha256": "e199cdfa6a8f2bf33cfd47e549198f13e3eb2a5099e908fdb4e0f14d939ccc6b",
+      "archivedSha256": "e199cdfa6a8f2bf33cfd47e549198f13e3eb2a5099e908fdb4e0f14d939ccc6b"
+    },
+    {
+      "path": "unity-starter/README.md",
+      "sourceSha256": "65f6bf7a4df91e61cab1c7b2b2f3f96a1afbfe561d97ae2df226355401998d2c",
+      "archivedSha256": "65f6bf7a4df91e61cab1c7b2b2f3f96a1afbfe561d97ae2df226355401998d2c"
+    },
+    {
+      "path": "unity/PlaceAvatarOnPlane.cs",
+      "sourceSha256": "60364c2bb28723d32e72812fb2abf519d46033683bb482f86abff0bd2cbb0c69",
+      "archivedSha256": "60364c2bb28723d32e72812fb2abf519d46033683bb482f86abff0bd2cbb0c69"
+    },
+    {
+      "path": "worker.py",
+      "sourceSha256": "cff3a1bc2d2f587532b5d83355b3ac7494948d6436bd37416c3179a29ee5bbe0",
+      "archivedSha256": "4f175eb6a9d9b850faacd08ba9643cbbaa0f360726cbf3742c341f1228b3a119"
+    }
+  ],
+  "verification": {
+    "webBuild": "passed",
+    "httpTests": 10,
+    "mixamoGeometryTests": 2,
+    "upstreamPatch": "git apply --check against exact906b5 baseline passed",
+    "newGpuInference": "not run; service remains stopped"
+  }
+}
